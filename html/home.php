@@ -2,6 +2,7 @@
 <hmtl>
     <head>
         <title>Food Ordeing Website</title>
+        <link rel="stylesheet" type="text/css" href="CSS/home.css" />
     </head>
     <body>
         <div id="navbar"> <!-- navbar-->
@@ -13,7 +14,7 @@
                 <a><p>About</p></a>
                 <a><p>Contact</p></a>
             </nav>
-            <img src="#">
+            <img src="#" id="logo"><!--logo-->
         </div>
         
     </body>
