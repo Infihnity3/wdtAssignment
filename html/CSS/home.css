@@ -1,3 +1,10 @@
-body {
-    font-size: 50px;
+.nav {
+    position: absolute;
+    right: 0px;
+    width: 150px;
+    height: 120px;
+}
+.navbar-logo {
+    width: 150px;
+    height: 150px;
 }
