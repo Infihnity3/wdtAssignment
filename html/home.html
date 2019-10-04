@@ -1,21 +1,110 @@
 <!DOCTYPE html>
-<hmtl>
+<html>
     <head>
-        <title>Food Ordeing Website</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Food Ordering Website</title>
         <link rel="stylesheet" type="text/css" href="CSS/home.css" />
     </head>
     <body>
-        <div id="navbar"> <!-- navbar-->
-            <nav>
-                <h1 id="logo"></h1><!-- logo -->
-                <a><p>Home</p></a>
-                <a><p>Order & Delivery</p></a>
-                <a><p>Profile</p></a>
-                <a><p>About</p></a>
-                <a><p>Contact</p></a>
-            </nav>
-            <img src="#" id="logo"><!--logo-->
-        </div>
-        
+        <header>
+  		<nav class="navbar">
+  			<div class="container">
+  				<div class="navbar-header">
+					  <!--logo as home button-->
+  					<a class="navbar-logo" href="home.html"><img src="logo.png" alt="Food Ordering Service" width="150" height="150" class="txtlogo"></a>
+  				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
+					<!-- going to replace the word 'account' into an icon-->
+							<div class="dropdown nav">
+								<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+								<div id="myDropdown" class="dropdown-content">
+									<a href="#">Settings</a>
+									<a href="#">Profile & Vouchers</a>
+									<a href="#">My Orders</a>
+									<a href="#">Help Center</a>
+									<a href="#">Logout</a>
+								</div>
+							</div>
+					</div>	  
+  				</div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+		  </nav>
+	  </header>
+	  <div class="search-loc">
+		  <div class="Delivery">
+
+		  </div>
+		  <div class="Pickup">
+
+		  </div>
+	  </div>
+	  <div>
+		<div class="register">
+
+		</div>
+		<div class="restaurant-register">
+
+		</div>
+	</div>
+	  <div class="restaurant-list">
+
+	  </div>
+	  <div class="about">
+
+	  </div>
+	  <!-- footer-->
+	<footer class="footer-section">
+	  <div class="footer-content">
+		<div class="contactInfo">
+
+		</div>
+		<div class="footer links">
+			<h2>Quick Links</h2>
+			<ul>
+				<a href="#">Settings</a>
+				<a href="#">Profile & Vouchers</a>
+				<a href="#">My Orders</a>
+				<a href="#">Help Center</a>
+				<a href="#">Logout</a>
+			</ul>
+		</div>
+		<div class="footer form">
+			<h2>Contact Us</h2>
+			
+			<form action="index.html" method="post">
+					<input type="email" name="email" class="text-input contact-input" placeholder="Email Address...">
+					<br>
+					<textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+					<br>
+					<button type="submit" class="btn btn-big contact-btn">
+					  <i class="fa fa-envelope-o" aria-hidden="true"></i>
+					  Send
+					</button>
+				  </form>
+		</div>
+	  </div>
+	</footer>  
+	  	<script>
+					/* When the user clicks on the button,
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+			}
+			
+			// Close the dropdown menu if the user clicks outside of it
+			window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+				var openDropdown = dropdowns[i];
+				if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				}
+				}
+			}
+			}
+		</script>
     </body>
-</hmtl>
+</html>
