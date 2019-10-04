@@ -13,24 +13,19 @@
   				<div class="navbar-header">
 					  <!--logo as home button-->
   					<a class="navbar-logo" href="home.html"><img src="logo.png" alt="Food Ordering Service" width="150" height="150" class="txtlogo"></a>
-  				
-
   				<!-- Collect the nav links, forms, and other content for toggling -->
-  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-  					<ul class="nav navbar-nav navbar-right">
-  						
-                <!-- going to replace the word 'account' into an icon-->
-  							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><svg class="svg-stroke-container" width="24" height="22" viewBox="0 0 24 22" xmlns="http://www.w3.org/2000/svg">
-								<path d="M.5 21.5c.66-1.305 2.085-2.274 5.085-3.456 2.957-1.219 3.436-2.088 3.436-3.7 0-.38-.072-.472-.285-.749-.303-.39-.716-.924-.97-2.308l-.029-.126c-.618-.341-.972-.808-1.062-2.194 0-.688.192-1.115.384-1.366a52.882 52.882 0 0 1-.241-2c-.066-.879.19-2.286 1.124-3.405C8.588 1.423 9.818.5 12.014.5c2.273 0 3.52.963 4.166 1.77.91 1.134 1.122 2.51 1.03 3.343a19.481 19.481 0 0 1-.231 1.993c.187.249.375.661.375 1.318-.09 1.43-.444 1.896-.986 2.2l-.102.15c-.23 1.409-.659 1.945-.97 2.338-.216.272-.289.363-.289.732 0 1.564.497 2.47 3.447 3.704 2.786 1.098 4.204 2.054 5.046 3.403" stroke="#D70F64" fill-rule="nonzero" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
-							</svg><span class="caret"></span></a>
-  							<ul class="dropdown-menu">
-  								<li><a href="#">Settings</a></li>
-                                <li><a href="#">Profile & Vouchers</a></li>
-                                <li><a href="#">My Orders</a></li>
-                                <li><a href="#">Help Center</a></li>
-                                <li><a href="#">Logout</a></li>
-  							</ul>
-					  </ul>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
+					<!-- going to replace the word 'account' into an icon-->
+							<div class="dropdown nav">
+								<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+								<div id="myDropdown" class="dropdown-content">
+									<a href="#">Settings</a>
+									<a href="#">Profile & Vouchers</a>
+									<a href="#">My Orders</a>
+									<a href="#">Help Center</a>
+									<a href="#">Logout</a>
+								</div>
+							</div>
 					</div>	  
   				</div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -58,16 +53,58 @@
 	  <div class="about">
 
 	  </div>
-	  <div class="footer">
+	  <!-- footer-->
+	<footer class="footer-section">
+	  <div class="footer-content">
 		<div class="contactInfo">
 
 		</div>
-		<div class="quick-links">
-
+		<div class="footer links">
+			<h2>Quick Links</h2>
+			<ul>
+				<a href="#">Settings</a>
+				<a href="#">Profile & Vouchers</a>
+				<a href="#">My Orders</a>
+				<a href="#">Help Center</a>
+				<a href="#">Logout</a>
+			</ul>
 		</div>
-		<div class="Contact-Us">
-
+		<div class="footer form">
+			<h2>Contact Us</h2>
+			
+			<form action="index.html" method="post">
+					<input type="email" name="email" class="text-input contact-input" placeholder="Email Address...">
+					<br>
+					<textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+					<br>
+					<button type="submit" class="btn btn-big contact-btn">
+					  <i class="fa fa-envelope-o" aria-hidden="true"></i>
+					  Send
+					</button>
+				  </form>
 		</div>
 	  </div>
+	</footer>  
+	  	<script>
+					/* When the user clicks on the button,
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+			}
+			
+			// Close the dropdown menu if the user clicks outside of it
+			window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+				var openDropdown = dropdowns[i];
+				if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				}
+				}
+			}
+			}
+		</script>
     </body>
 </html>
