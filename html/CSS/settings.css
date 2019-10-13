@@ -1,0 +1,35 @@
+/*navbar*/
+.fixed-top{
+    background-color: #f1f1f1;
+}
+.btn-outline-dark{
+    color: #131212;
+   
+}
+.btn-outline-dark:hover{
+    background-color: #131212;
+}
+.navbar-logo{
+    margin-left: 52%;
+}
+
+.btn-reg{
+    margin-left: 30%;
+    margin-top: 6%;
+}
+/*Footer*/
+.page-footer{
+    background-color: #f1f1f1;
+    color: #131212;
+    margin-top: 5%;
+}
+.list-unstyled{
+    color: #f1f1f1;
+}
+.footer-copyright{
+    background-color: #fff;
+    color: #131212;
+}
+a{
+    color: #131212;
+}
