@@ -5,6 +5,10 @@
 }
 .btn-outline-dark:hover{
     background-color: #131212;
+
+}
+.col-12{
+    margin-left: 43%;
 }
 .navbar-logo{
     margin-left: 200px;
