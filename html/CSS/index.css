@@ -1,18 +1,40 @@
+/*navbar*/
+.fixed-top{
+    background-color: #f1f1f1;
+}
 .btn-outline-dark{
-    margin-top: 10%;
     color: #131212;
-    border-color: #131212;
+   
 }
 .btn-outline-dark:hover{
     background-color: #131212;
-
-}
-.col-12{
-    margin-left: 43%;
 }
 .navbar-logo{
-    margin-left: 200px;
+    margin-left: 52%;
 }
 .btn-reg{
-    margin-left: 200px;
+    margin-left: 30%;
+    margin-top: 6%;
+}
+
+/*Join Us Now*/
+.btn-join{
+    margin-top: 25%;
+    margin-left: 43%;
+}
+/*Footer*/
+.page-footer{
+    background-color: #f1f1f1;
+    color: #131212;
+    margin-top: 25%;
+}
+.list-unstyled{
+    color: #f1f1f1;
+}
+.footer-copyright{
+    background-color: #fff;
+    color: #131212;
+}
+a{
+    color: #131212;
 }
