@@ -24,6 +24,8 @@
 /*Restaurant List*/
 .card-deck{
     margin-top: 20%;
+    margin-left: 1px;
+    margin-right: 0;
 }
 .btn-menu{
     margin-left: 40%;
