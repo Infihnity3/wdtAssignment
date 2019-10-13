@@ -1,3 +1,8 @@
+/*navbar*/
+.container{
+    height: 15%;
+    background-color: #fff;
+}
 .btn-outline-dark{
     margin-top: 10%;
     color: #131212;
@@ -9,10 +14,30 @@
 .navbar-logo{
     margin-left: 200px;
 }
+/*maps*/
 .btn-reg{
     margin-left: 200px;
 }
 .btn-main{
     margin-left: 43%;
-    margin-top: 30%;
+    margin-top: 65%;
 }
+/*Restaurant List*/
+
+/*Footer*/
+.page-footer{
+    background-color: #f1f1f1;
+    color: #131212;
+    margin-top: 90%;
+}
+.list-unstyled{
+    color: #f1f1f1;
+}
+.footer-copyright{
+    background-color: #fff;
+    color: #131212;
+}
+a{
+    color: #131212;
+}
+
