@@ -17,20 +17,6 @@
     margin-left: 30%;
     margin-top: 6%;
 }
-/*maps*/
-.btn-main{
-    margin-left: 43%;
-    margin-top: 30%;
-}
-/*Restaurant List*/
-.card-deck{
-    margin-top: 20%;
-    margin-left: 1px;
-    margin-right: 0;
-}
-.btn-menu{
-    margin-left: 40%;
-}
 /*Footer*/
 .page-footer{
     background-color: #f1f1f1;
@@ -47,4 +33,3 @@
 a{
     color: #131212;
 }
-
