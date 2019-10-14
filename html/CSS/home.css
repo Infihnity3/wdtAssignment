@@ -1,3 +1,12 @@
+body{
+    background: rgb(255,229,180);
+background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
+}
+a{
+    color: #131212;
+}
+
+
 /*navbar*/
 .fixed-top{
     background-color: #f1f1f1;
@@ -18,9 +27,6 @@
     margin-top: 6%;
 }
 /*maps*/
-body{
-    background-color: #c19a6b;
-}
 .btn-main{
     margin-left: 43%;
     margin-top: 30%;
@@ -46,14 +52,14 @@ body{
     color: #131212;
     margin-top: 5%;
 }
+
 .list-unstyled{
     color: #f1f1f1;
 }
 .footer-copyright{
-    background-color: #fff;
+    background: rgb(255,229,180);
+    background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
     color: #131212;
 }
-a{
-    color: #131212;
-}
+
 
