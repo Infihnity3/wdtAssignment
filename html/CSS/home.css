@@ -18,9 +18,18 @@
     margin-top: 6%;
 }
 /*maps*/
+body{
+    background-color: #c19a6b;
+}
 .btn-main{
     margin-left: 43%;
     margin-top: 30%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-width: 3px;
+    border-color: #131212;
 }
 /*Restaurant List*/
 .card-deck{
