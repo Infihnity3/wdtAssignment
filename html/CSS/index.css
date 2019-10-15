@@ -1,6 +1,6 @@
 /*navbar*/
 .fixed-top{
-    background-color: #f1f1f1;
+    background-color: #fff;
 }
 .btn-outline-dark{
     color: #131212;
@@ -20,11 +20,11 @@
 /*Join Us Now*/
 .btn-join{
     margin-top: 25%;
-    margin-left: 43%;
+    margin-left: 48%;
 }
 /*Footer*/
 .page-footer{
-    background-color: #f1f1f1;
+    background-color: #fff;
     color: #131212;
     margin-top: 25%;
 }
@@ -32,7 +32,8 @@
     color: #f1f1f1;
 }
 .footer-copyright{
-    background-color: #fff;
+background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
+background-color: #fff;
     color: #131212;
 }
 a{
