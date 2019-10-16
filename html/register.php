@@ -13,7 +13,7 @@ echo "<script>alert('Password and confirmed password not same!'); ";
 die("window.history.go(-1);</script>");
 }
 
-$sql = "Insert into users (User_Name, User_Password, User_Email, User_Last_login ) VALUES ('$username','".md5($password)."','$email','".date("Y-m-d H:i:s")."');";
+$sql = "Insert into users (user_name, user_password, user_email, user_last_login ) VALUES ('$username','".md5($password)."','$email','".date("Y-m-d H:i:s")."');";
 mysqli_query($conn, $sql);
 
 //echo $sql;
@@ -25,3 +25,5 @@ die("window.history.go(-1);</script>");
 
 echo "<script>alert('Register Successfully!Please login now!');";
 echo "window.location.href='login.html';</script>";
+
+?>
