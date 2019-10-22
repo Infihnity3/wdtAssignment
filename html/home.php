@@ -16,7 +16,7 @@
     <div class="container-fluid fixed-top">
         <div class="row">
             <div class="col-6">
-                <a class="navbar-logo" href="home.html"><img src="image/logo.png" alt="Food Ordering Service" width="150" height="150" class="txtlogo"></a>
+                <a class="navbar-logo" href="home.php"><img src="image/logo.png" alt="Food Ordering Service" width="150" height="150" class="txtlogo"></a>
             </div>
             <div class="col-6">
                 <div class="dropdown">
@@ -24,11 +24,11 @@
                     Profile
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="home.html">Home</a>
-                        <a class="dropdown-item" href="settings.html">Settings</a>
-                        <a class="dropdown-item" href="myOrders.html">My Orders</a>
+                        <a class="dropdown-item" href="home.php">Home</a>
+                        <a class="dropdown-item" href="settings.php">Settings</a>
+                        <a class="dropdown-item" href="myOrders.php">My Orders</a>
                         <a class="dropdown-item" href="#">Help</a>
-                        <a class="dropdown-item" href="index.html">Log Out</a>
+                        <a class="dropdown-item" href="index.php">Log Out</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                     <div class="card-footer">
-                            <a href="#" class="btn btn-outline-dark btn-menu">View Menu</a>
+                            <a href="menu.php" class="btn btn-outline-dark btn-menu">View Menu</a>
                     </div>
                 </div>
                 <div class="card">
@@ -63,7 +63,7 @@
                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-outline-dark btn-menu">View Menu</a>
+                        <a href="menu.php" class="btn btn-outline-dark btn-menu">View Menu</a>
                     </div>
                 </div>
                 <div class="card">
@@ -73,7 +73,7 @@
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-outline-dark btn-menu">View Menu</a>
+                        <a href="menu.php" class="btn btn-outline-dark btn-menu">View Menu</a>
                     </div>
                 </div>
             </div>
@@ -94,10 +94,10 @@
             <div class="col-4 foot-space">
               <h5 class="text-uppercase">Quick Links</h5>
               <ul class="list-unstyled">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="settings.html">Settings</a></li>
-                <li><a href="myOrders.html">My Orders</a></li>
-                <li><a href="index.html">Log Out</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="settings.php">Settings</a></li>
+                <li><a href="myOrders.php">My Orders</a></li>
+                <li><a href="index.php">Log Out</a></li>
               </ul>
             </div>
             <!-- Enquiry -->

@@ -16,7 +16,7 @@
     <div class="container-fluid fixed-top">
             <div class="row">
                 <div class="col-6">
-                    <a class="navbar-logo" href="index.html"><img src="image/logo.png" alt="Food Ordering Service" width="150" height="150" class="txtlogo"></a>
+                    <a class="navbar-logo" href="index.php"><img src="image/logo.png" alt="Simple Food Inc" width="150" height="150" class="txtlogo"></a>
                 </div>
                 <div class="col-6">
                     <div class="dropdown">
@@ -50,8 +50,8 @@
                     <div class="col-4 foot-space">
                       <h5 class="text-uppercase">Quick Links</h5>
                       <ul class="list-unstyled">
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="LoginRegister.html">Log In/Register</a></li>
+                        <li><a href="home.php">Home</a></li>
+                        <li><a href="LoginRegister.php">Log In/Register</a></li>
                       </ul>
                     </div>
                     <!-- Enquiry -->
