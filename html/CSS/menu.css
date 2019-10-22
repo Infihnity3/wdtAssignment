@@ -31,9 +31,8 @@ background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 1
     color: #f1f1f1;
 }
 .footer-copyright{
-    background: rgb(255,229,180);
-background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
-    color: #131212;
+    background: #131212;
+    color: #f1f1f1;
 }
 a{
     color: #131212;

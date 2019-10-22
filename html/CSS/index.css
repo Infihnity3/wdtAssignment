@@ -39,8 +39,7 @@ a{
     color: #f1f1f1;
 }
 .footer-copyright{
-background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
-background-color: #fff;
-    color: #131212;
+    background: #131212;
+    color: #f1f1f1;
 }
 
