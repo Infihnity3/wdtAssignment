@@ -1,4 +1,39 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Login</h1>
+    <form action="post" action="register.php">
+    <tr>
+        <th>
+            Username:
+        </th>
+        <td>
+            <input type="text" id="user" name="user" required>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Password:
+        </th>
+        <td>
+            <input type="password" id="pass" name="pass" required>
+        </td>
+    </tr>
+   
+    <tr>
+        <th colspan="2">
+            <br>
+            <input type="submit" id="login" value="Login">
+            <input type="reset" value="reset">
+        </th>
+    </tr>
+    <?php
     session_start();
     include "conn.php";
 
@@ -36,3 +71,6 @@
         echo "window.location.href='adminhomepage.html';</script>";
     }
 ?>
+</form>
+</body>
+</html>
