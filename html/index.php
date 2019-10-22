@@ -20,9 +20,11 @@
                 </div>
                 <div class="col-6">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-outline-dark btn-reg">
+                        <a href="login.php">
+                        <button type="button" class="btn btn-outline-dark btn-reg" >
                         Log In / Register
                         </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -50,7 +52,7 @@
                     <div class="col-4 foot-space">
                       <h5 class="text-uppercase">Quick Links</h5>
                       <ul class="list-unstyled">
-                        <li><a href="home.php">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="LoginRegister.php">Log In/Register</a></li>
                       </ul>
                     </div>
