@@ -53,7 +53,7 @@
                       <h5 class="text-uppercase">Quick Links</h5>
                       <ul class="list-unstyled">
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="LoginRegister.php">Log In/Register</a></li>
+                        <li><a href="login.php">Log In/Register</a></li>
                       </ul>
                     </div>
                     <!-- Enquiry -->
