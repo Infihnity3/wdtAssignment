@@ -21,7 +21,7 @@
             <div class="col-4 foot-space"> 
               <h5 class="text-uppercase">Simple Food Inc</h5>
               <p>San Franciso, California, U.S.A.</p>
-              <p>+1 234950532</p>
+              <p>+60 1234950575</p>
               <a href="mailto:simplefoodinc@mail.com"><img src="image/email.png" alt="email us" class="email"></a>
             </div>  
             <!-- Quick Links -->

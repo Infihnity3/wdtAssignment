@@ -40,7 +40,7 @@
             <div class="card card-body">
                 <span class="float-right font-weight-bold">RM10</span>
                 <h6 class="text-truncate">Char Kuey Teow</h6>
-                <p class="small">Flat rice noodles fried in garlic, sweet soys and lard with ingredients such as egg, chinese waxed sausage, breanspouts and cockles. </p>
+                <p class="small">Flat rice noodles sweet soy sauce with ingredients such as egg, chinese waxed sausage, breanspouts and cockles. </p>
             </div>
             
            

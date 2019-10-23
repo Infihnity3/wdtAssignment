@@ -13,6 +13,9 @@ background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 1
 .btn-main{
     margin-left: 45%;
 }
+.card-body{
+    width: 200px;
+}
 a{
     color: #131212;
 }
