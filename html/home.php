@@ -25,7 +25,7 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="home.php">Home</a>
-                        <a class="dropdown-item" href="dashboard.php">My Orders</a>
+                        <a class="dropdown-item" href="dashboard.php">Dashboard</a>
                         <a class="dropdown-item" href="#contact">Help</a>
                         <a class="dropdown-item" href="index.php">Log Out</a>
                     </div>
@@ -37,19 +37,21 @@
     <div class="container-fluid">   
         <div class="row bgcolor">
             <div class="col-12">
+                <a href="menu.php">
                 <button type="button" class="btn btn-outline-dark btn-main"><b>Order Now</b></button>
+                </a>    
             </div>
         </div>
     </div>
     <!--Restaurants List-->
-    <div class="container-fluid">
+    <div class="container-fluid menu">
         <div class="row">
             <div class="card-deck">
                 <div class="card">
                     <img class="card-img-top" src="image/local.jpg" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">Local</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text">Local dishes such as Nasi Lemak, Roti Canai and Char Kuey Teow. You can find it here.</p>
                     </div>
                     <div class="card-footer">
                             <a href="menu.php" class="btn btn-outline-dark btn-menu">View Menu</a>
@@ -59,7 +61,7 @@
                     <img class="card-img-top" src="image/japanese.jpg" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">Japanese</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">Fancy some sushi or just some japanese dishes. Fret not, we've got you covered.</p>
                     </div>
                     <div class="card-footer">
                         <a href="menu.php" class="btn btn-outline-dark btn-menu">View Menu</a>
@@ -69,7 +71,7 @@
                     <img class="card-img-top" src="image/thai.jpg" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">Thai</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text">Green curry or Thai fried rice.This is the place for you.</p>
                     </div>
                     <div class="card-footer">
                         <a href="menu.php" class="btn btn-outline-dark btn-menu">View Menu</a>
@@ -94,8 +96,7 @@
               <h5 class="text-uppercase">Quick Links</h5>
               <ul class="list-unstyled">
                 <li><a href="home.php">Home</a></li>
-                <li><a href="settings.php">Settings</a></li>
-                <li><a href="myOrders.php">My Orders</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="index.php">Log Out</a></li>
               </ul>
             </div>

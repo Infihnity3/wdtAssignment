@@ -25,7 +25,7 @@
                     </button>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="home.php">Home</a>
-                        <a class="dropdown-item" href="dashboard.php">My Orders</a>
+                        <a class="dropdown-item" href="dashboard.php">Dashboard</a>
                         <a class="dropdown-item" href="#contact">Help</a>
                         <a class="dropdown-item" href="index.php">Log Out</a>
                     </div>
