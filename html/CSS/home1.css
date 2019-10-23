@@ -7,25 +7,7 @@ body{
     }
     
     
-    /*navbar*/
-    .fixed-top{
-        background-color: #fff;
-    }
-    .btn-outline-dark{
-        color: #131212;
-       
-    }
-    .btn-outline-dark:hover{
-        background-color: #131212;
-    }
-    .navbar-logo{
-        margin-left: 52%;
-    }
     
-    .btn-reg{
-        margin-left: 30%;
-        margin-top: 6%;
-    }
     /*maps*/
     .btn-main{
         margin-left: 43%;
@@ -46,16 +28,4 @@ body{
     .btn-menu{
         margin-left: 40%;
     }
-    /*Footer*/
-    .page-footer{
-        background-color: #fff;
-        color: #131212;
-        margin-top: 5%;
-    }
-    .list-unstyled{
-        color: #f1f1f1;
-    }
-    .footer-copyright{
-        background-color: #131212;
-        color: #f1f1f1;
-    }
+    
