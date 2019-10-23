@@ -1,7 +1,7 @@
-.login-clean {
-  background-color: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
-  padding: 200px 0;
-}
+body {
+    background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
+    padding: 226px 0;
+  }
 
 .login-clean form {
   max-width: 320px;

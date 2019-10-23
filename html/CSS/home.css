@@ -1,7 +1,16 @@
-
+body{
+    
+    background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
+    }
+    a{
+        color: #131212;
+    }
+    
+    
+    
     /*maps*/
     .btn-main{
-        margin-left: 43%;
+        margin-left: 48%;
         margin-top: 30%;
         padding-top: 0.5%;
         padding-bottom: 0.5%;
@@ -13,7 +22,7 @@
     /*Restaurant List*/
     .card-deck{
         margin-top: 20%;
-        margin-left: 10px;
+        margin-left: 1px;
         margin-right: 0;
     }
     .btn-menu{
