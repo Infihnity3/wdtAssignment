@@ -15,6 +15,16 @@
     <?php
     include "header.php";
     ?>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+            <h1>Settings</h1>
+            </div>
+            <div class="col-6">
+                <h1>My Orders</h1>
+            </div>
+        </div>
+    </div>
 
     <?php
     include "footer.php";

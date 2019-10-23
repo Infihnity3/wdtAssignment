@@ -29,8 +29,7 @@
               <h5 class="text-uppercase">Quick Links</h5>
               <ul class="list-unstyled">
                 <li><a href="home.php">Home</a></li>
-                <li><a href="settings.php">Settings</a></li>
-                <li><a href="myOrders.php">My Orders</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="index.php">Log Out</a></li>
               </ul>
             </div>
