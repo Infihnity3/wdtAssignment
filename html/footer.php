@@ -30,12 +30,17 @@
               <ul class="list-unstyled">
                 <li><a href="home.php">Home</a></li>
                 <li><a href="dashboard.php">Dashboard</a></li>
-                <li><a href="index.php">Log Out</a></li>
+                <li><a href="Logout.php">Log Out</a></li>
               </ul>
             </div>
             <!-- Enquiry -->
             <div class="col-4 foot-space" id="contact">
               <h5 class="text-uppercase">Contact Us</h5>
+              <form action="/action_page.php">
+                <input type="email" id="email" name="email" placeholder="Your email..">
+                <textarea id="text" name="text" placeholder="Tell us something either feedback or any queries about using our website.." style="height:170px"></textarea>
+                <input type="submit" value="Submit">
+              </form>
             </div>
         </div>
           <!-- Copyright -->

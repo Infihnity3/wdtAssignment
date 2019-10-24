@@ -27,7 +27,7 @@
                       <a class="dropdown-item" href="home.php">Home</a>
                         <a class="dropdown-item" href="dashboard.php">Dashboard</a>
                         <a class="dropdown-item" href="#contact">Help</a>
-                        <a class="dropdown-item" href="index.php">Log Out</a>
+                        <a class="dropdown-item" href="Logout.php">Log Out</a>
                     </div>
                 </div>
             </div>
