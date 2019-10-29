@@ -33,14 +33,21 @@
                       </ul>
                     </div>
                     <!-- Enquiry -->
-                    <div class="col-4 foot-space">
-                      <h5 class="text-uppercase">Enquiry</h5>
-                      <form action="/action_page.php">
-                        <input type="email" id="email" name="email" placeholder="Your email..">
-                        <textarea id="text" name="text" placeholder="Tell us something either feedback or any queries about using our website.." style="height:170px"></textarea>
-                        <input type="submit" value="Submit">
-                      </form>
+                    <div class="footer form">
+                    <h2>Enquiry</h2>
+                    <br>
+                    <form action="index.html" method="post">
+                      <input type="email" name="email" class="text-input contact-input" placeholder="Email Address...">
+                      <br>
+                      <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                      <br>
+                      <button type="submit" class="btn btn-outline-dark">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        Send
+                      </button>
+                    </form>
                     </div>
+                  </div>
                 </div>
                   <!-- Copyright -->
             </div>

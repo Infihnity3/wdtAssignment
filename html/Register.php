@@ -23,8 +23,7 @@
                 <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
                 <div class="form-group"><input class="form-control" type="password" name="confirmpass" placeholder="Confirm Password" required></div>
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button>
-                </div><label>You already have an account? <a class="already" href="Login.php
-                ">Login here.</a></label></form>
+                </div><label>You already have an account? <a class="already" href="login1.php">Login here.</a></label></form>
         </div>
     </div>
     
@@ -52,7 +51,7 @@
     // if(isset($email === "select * from user where user_email"))
 
     //insert the data into the database
-    $sql = "Insert into users (user_name, user_password, user_email, user_last_login) values ('$username', '".password_hash($password, PASSWORD_DEFAULT )."','$email','".date("Y-m-d H:i:s")."');";
+    $sql = "Insert into users (user_name, user_password, user_email, user_last_login) values ('$username', '".md5($password)."','$email','".date("Y-m-d H:i:s")."');";
 
     // echo $sql;
     //if connection with Db failed then unable to register, else register successfully
@@ -62,7 +61,7 @@
         die("window.history.go(-1);</script>");
     }else{
          echo "<script>alert('Register Successfully! Please login now!');";
-        echo "window.location.href='login.php  ';</script>";
+        echo "window.location.href='login1.php  ';</script>";
     }
     }
    

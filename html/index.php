@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="CSS/index2.css" type="text/css">
 </head>
 <body>
-   <?php
-   include "header2.php";
-   ?>
+  <?php
+  include "header2.php";
+  ?>
     <!-- Join Us Now-->
     <div class="container-fluid">
         <div class="col-12"> 
@@ -28,5 +28,7 @@
    <?php
    include "footer2.php";
    ?>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

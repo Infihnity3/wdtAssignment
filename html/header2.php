@@ -1,3 +1,7 @@
+<?php
+session_start();    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +20,31 @@
     <div class="container-fluid fixed-top">
             <div class="row">
                 <div class="col-6">
-                    <a class="navbar-logo" href="index.php"><img src="image/logo.png" alt="Simple Food Inc" width="150" height="150" class="txtlogo"></a>
+                    <img class="navbar-logo" src="image/logo.png" alt="Simple Food Inc" width="150" height="150" class="txtlogo"</a>
                 </div>
                 <div class="col-6">
                     <div class="dropdown">
-                        <a href="Register.php">
-                        <button type="button" class="btn btn-outline-dark btn-reg" >
+                        <?php
+                         include ('conn.php');
+                    
+                         if (isset($_SESSION['user'])){
+                            
+                             echo '<button type="button" class="btn btn-outline-dark dropdown-toggle btn-reg" data-toggle="dropdown">'.$_SESSION['user'].'  
+                        </button>';
+                        echo '<div class="dropdown-menu">';
+                            echo '<a class="dropdown-item" href="home.php">Home</a>';
+                           echo '<a class="dropdown-item" href="dashboard.php">Dashboard</a>';
+                            echo '<a class="dropdown-item" href="#contact">Help</a>';
+                           echo '<a class="dropdown-item" href="Logout.php">Log Out</a>';
+                        echo '</div>';
+                         }else{
+                        echo'<a href="Register.php">
+                       <button type="button" class="btn btn-outline-dark btn-reg" >
                         Log In / Register
                         </button>
-                        </a>
+                        </a>';
+                    }
+                    ?>
                     </div>
                 </div>
             </div>

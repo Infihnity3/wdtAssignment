@@ -13,7 +13,7 @@
 </head>
 <body>
     <?php
-    include "header.php";
+    include "header2.php";
     ?>
    
     <div class="container">
@@ -108,5 +108,7 @@
      <?php
      include "footer.php";
      ?>
+     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

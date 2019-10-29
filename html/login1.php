@@ -10,9 +10,9 @@
 </head>
 
 <body>
-        <?php
-        include "header2.php";
-        ?>
+    <?php
+    include "header2.php";
+    ?>
         
     <div class="login-clean">
         <form method="post" action="login.inc.php">
@@ -25,11 +25,13 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <?php
+   
+   
+   
+   
+   <?php
     include "footer2.php";
     ?>
-
-
 </body>
 
 </html>

@@ -35,15 +35,18 @@ $result = mysqli_query($conn, $sql);
                     echo "<script>window.location.href='home.php';</script>";
                 }
                 else if($row['user_role']==="0")
-                {
-                    echo "<script>alert('Welcome back! admin');";
-                    echo "window.location.href='admin.php';</script>";
+                {   
+                    echo "<script>window.location.href='admin.php';</script>";
                 }      
             }
             
         }
     }
-}else{
-    echo "Noclick";
 }
 ?>
+<?php
+
+
+
+?>
+
