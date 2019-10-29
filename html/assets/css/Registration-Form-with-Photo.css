@@ -1,3 +1,4 @@
+
 .register-photo {
   background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
   padding: 226px 0;
@@ -14,6 +15,7 @@
   display: table;
   max-width: 900px;
   width: 90%;
+  
   margin: 0 auto;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }

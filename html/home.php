@@ -14,11 +14,17 @@
 <body>
 <?php
     include "header.php";
-    ?>
+?>
     <!--Maps-->
+    
     <div class="container-fluid">   
-        <div class="row bgcolor">
-            <div class="col-12">
+   
+        <div class="row bgcolor"> 
+            <div class="col-12">        
+    <?php
+    $_SESSION['user'] = $row['user_name'];
+    echo "Hi, ".$_SESSION['user'];
+    ?>
                 <a href="menu.php">
                 <button type="button" class="btn btn-outline-dark btn-main"><b>Order Now</b></button>
                 </a>  

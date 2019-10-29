@@ -3,6 +3,10 @@ body {
     padding: 226px 0;
   }
 
+.login-clean {
+  margin-bottom: 20%;
+}
+
 .login-clean form {
   max-width: 320px;
   width: 90%;

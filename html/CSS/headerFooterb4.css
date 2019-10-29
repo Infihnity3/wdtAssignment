@@ -1,10 +1,3 @@
-body{
-
-background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
-}
-a{
-    color: #131212;
-}
 /*navbar*/
 .fixed-top{
     background-color: #fff;
@@ -19,7 +12,6 @@ a{
 .navbar-logo{
     margin-left: 52%;
 }
-
 .btn-reg{
     margin-left: 30%;
     margin-top: 6%;
@@ -28,7 +20,7 @@ a{
 .page-footer{
     background-color: #fff;
     color: #131212;
-    margin-top: 10%;
+   position: relative;
 }
 .list-unstyled{
     color: #f1f1f1;
@@ -37,6 +29,7 @@ a{
     background: #131212;
     color: #f1f1f1;
 }
+
 * {
     box-sizing: border-box;
   }
@@ -84,3 +77,5 @@ a{
     display: table;
     clear: both;
   }
+  
+  

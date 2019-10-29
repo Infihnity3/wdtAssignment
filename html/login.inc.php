@@ -27,12 +27,12 @@ $result = mysqli_query($conn, $sql);
                 $_SESSION['email'] = $row['user_email'];
                 $_SESSION['password'] = $row['user_password'];
                 $_SESSION['role'] = $row['user_role'];
-
+                $_SESSION['user'] = $row['user_name'];
                 echo "Success";
                 if($row['user_role']==="1")//determine which page to go to
                 {
-                    echo "<script>alert('Welcome Back!".$_SESSION['user']."');";
-                    echo "window.location.href='home.php';</script>";
+                
+                    echo "<script>window.location.href='home.php';</script>";
                 }
                 else if($row['user_role']==="0")
                 {
