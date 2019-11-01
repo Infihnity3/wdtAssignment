@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,13 @@
     <style>
     .container{
         background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
+    }
+    .btn {
+        margin-left: 47.5%; 
+    }
+    .card{
+        width:200px;
+        height:150px;
     }
     </style>
 </head>
@@ -99,10 +107,10 @@
         <div class="col-12 mt-4">
             <hr class="accent my-5">
         </div>
-        <div class="container-fluid">   
+        <div class="container-fluid ordB">   
         <div class="row bgcolor">
             <div class="col-12">
-                <a href="#">
+                <a href="order.php">
                 <button type="button" class="btn btn-outline-dark btn-main"><b>Order Now</b></button>
                 </a>    
             </div>

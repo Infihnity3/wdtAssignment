@@ -20,16 +20,23 @@
             margin-top: 200px;
             background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
         }
-        .container .row .text-primary{
-            color: #131212;
-        }
+    
         .btn-main{
             margin-left: 45%;
+            margin-top: 5%;
         }
-        .card-body{
-            width: 200px;
-            height: 100px;
+        .labelPos{
+            margin-top: 12.5%;
+            margin-left: 25%;
         }
+        .selectPos{
+            margin-top: 1%; 
+        }
+        .select{
+            width:20%;
+            margin-left: 37.5%;
+        }
+        
         a{
             color: #131212;
         }
@@ -39,11 +46,42 @@
     <?php
     include "header2.php";
     ?>
+        <h1 class="labelPos">Please choose the food that you would like to order:</h1>
+        <div class="select">
+            <p> *You can select up to 3 choices of different cuisines</p>
 
+            <select class='custom-select custom-select-sm selectPos' required>
+            <option selected>Open this select menu</option>
+<?php
+include "conn.php";
+$sql = "select * from food";
+$result =mysqli_query($conn, $sql);
 
-    
+    while($rows = mysqli_fetch_array($result)){
+           echo "
+                
+                <option value=".$rows['food_name'].">".$rows['food_name']."</option>";
+                
+    }
+?>
+</select>
+            <select class="custom-select custom-select-sm selectPos">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <select class="custom-select custom-select-sm selectPos">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
 
-
+        </div>
+    <a href="confirmOrder.php">
+        <button class="btn btn-outline-dark btn-main">Confirm Order</button>
+    </a>
     <?php
     include "footer.php";
     ?>
