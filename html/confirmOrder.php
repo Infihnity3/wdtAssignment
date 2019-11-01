@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("conn.php");
-$result = mysqli_query($conn, "SELECT * FROM food");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,29 +30,19 @@ $result = mysqli_query($conn, "SELECT * FROM food");
         a{
             color: #131212;
         }
+
     </style>
 </head>
 <body>
     <?php
     include "header2.php";
     ?>
-        <?php                       
-						while($row = mysqli_fetch_array($result))
-				  	 {
-				 		echo "<div class=''>
-				  			 	 <div class=''><img src=".$row["food_img"]." alt=''></div>
-				  			 	 <div class=''><a href=''>".$row["food_name"]."alt=''></div>
-					 			  <div class=''><a href=''>".$row["food_description"]."</a></div>
-                                  <div class=''>RM ".$row["food_price"]."</div>
-                                  <div clas 
-				 			 </div>
-						 </div>";
-				   }
-				   ?>
-        <?php
+    
+    
+    <?php
     include "footer.php";
     ?>
-     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

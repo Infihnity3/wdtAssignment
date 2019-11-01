@@ -46,28 +46,7 @@
     * {
         box-sizing: border-box;
       }
-      
-      /* Style inputs */
-      input[type=text], select, textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        resize: vertical;
-      }
-      
-      input[type=submit] {
-        background-color: #131212;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        cursor: pointer;
-      }
-      
-      input[type=submit]:hover {
-        background-color: #363535;
-      }
+
       
       /* Style the container/contact section */
       .container {
@@ -86,7 +65,7 @@
       
       /* Clear floats after the columns */
       .row:after {
-        content: "";
+ 
         display: table;
         clear: both;
       }
@@ -119,9 +98,9 @@
                     <h2>Enquiry</h2>
                     <br>
                     <form action="insert.php" method="post">
-                      <input type="email" name="email" class="text-input contact-input" placeholder="Email Address...">
+                      <input type="email" name="email" class="text-input contact-input" placeholder="Email Address..." required>
                       <br>
-                      <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                      <textarea name="message" class="text-input contact-input" placeholder="Your message..." required></textarea>
                       <br>
                       <button type="submit" class="btn btn-outline-dark">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>

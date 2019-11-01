@@ -38,8 +38,8 @@
             <div class="col-6">
                 <h1>User Information:</h1>
                 <br>
-                <table border="1" style="table table-dark table-hover">
-                    <tr bgcolor="f1f1f1">
+                <table border="1" class="table table-dark">
+                    <tr bgcolor="f1f1f1" style="color:#131212">
                         <th>Name</th>
                         <th>Email</th>
                         <th>Last Login</th>
@@ -66,8 +66,8 @@
                                 echo "<td>".$rows['user_last_login']."</td>";
 
                                 //create 2 buttons (edit button and delte button in each row)
-                                echo "<td><a href='edit.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark ' >Edit</button></a></td>";
-                                echo "<td><a href='delete.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark' >Delete</button></a></td>";
+                                echo "<td><a href='edit.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark ' style='color:#f1f1f1'>Edit</button></a></td>";
+                                echo "<td><a href='delete.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark' style='color:#f1f1f1'>Delete</button></a></td>";
                                 echo "</tr>";
                             }
                         ?>

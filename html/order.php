@@ -53,31 +53,41 @@
             <select class='custom-select custom-select-sm selectPos' required>
             <option selected>Open this select menu</option>
 <?php
-include "conn.php";
-$sql = "select * from food";
-$result =mysqli_query($conn, $sql);
+    include "conn.php";
+    $sql = "select * from local_food";
+    $result =mysqli_query($conn, $sql);
 
-    while($rows = mysqli_fetch_array($result)){
-           echo "
-                
-                <option value=".$rows['food_name'].">".$rows['food_name']."</option>";
-                
-    }
+        while($rows = mysqli_fetch_array($result)){
+            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                    
+        }
 ?>
-</select>
-            <select class="custom-select custom-select-sm selectPos">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
             </select>
-            <select class="custom-select custom-select-sm selectPos">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
+            <select class='custom-select custom-select-sm selectPos' required>
+            <option selected>Open this select menu</option>
+<?php
+    include "conn.php";
+    $sql = "select * from thai_food";
+    $result =mysqli_query($conn, $sql);
 
+        while($rows = mysqli_fetch_array($result)){
+            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                    
+        }
+?>
+            </select><select class='custom-select custom-select-sm selectPos' required>
+            <option selected>Open this select menu</option>
+<?php
+    include "conn.php";
+    $sql = "select * from japanese_food";
+    $result =mysqli_query($conn, $sql);
+
+        while($rows = mysqli_fetch_array($result)){
+            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                    
+        }
+?>
+            </select>
         </div>
     <a href="confirmOrder.php">
         <button class="btn btn-outline-dark btn-main">Confirm Order</button>

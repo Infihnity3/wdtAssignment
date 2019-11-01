@@ -97,7 +97,9 @@
     <div class="container-fluid fixed-top">
             <div class="row">
                 <div class="col-6">
+                <a href="admin.php">
                     <img class="navbar-logo" src="image/logo.png" alt="Simple Food Inc" width="150" height="150" class="txtlogo">
+                </a>
                 </div>
                 <div class="col-6">
                 <div class="dropdown">
@@ -106,7 +108,7 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="admin.php">User Information</a>
-                        <a class="dropdown-item" href="insertFood.php">Add Item</a>
+                        <a class="dropdown-item" href="addEditFood.php">Add and Edit Item</a>
                         <a class="dropdown-item" href="contact.php">Contact Form</a>
                         <a class="dropdown-item" href="Logout.php">Log Out</a>
                     </div>

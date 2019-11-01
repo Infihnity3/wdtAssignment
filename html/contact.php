@@ -39,8 +39,8 @@
           
                 <h1>Contact Form:</h1>
                 <br>
-                <table border="1" style="table table-dark table-hover">
-                            <tr bgcolor="f1f1f1">
+                <table border="1" class="table table-dark">
+                            <tr bgcolor="f1f1f1" style="color:#131212">
                                 <th>Email</th>
                                 <th>Message</th>
                             </tr>

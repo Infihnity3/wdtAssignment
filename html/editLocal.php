@@ -28,15 +28,16 @@ include "header.php";
     //to get all the relevance info from the databasefor that specific item
     include "conn.php";
     $id = $_GET['id'];//edit.php?id=1
-    $sql = "select * from users where user_ID = $id";
+    $sql = "select * from local_Food where food_ID = $id";
     $result = mysqli_query($conn, $sql);
     if($rows = mysqli_fetch_array($result)){
-        $name = $rows['user_name'];
-        $email = $rows['user_email'];
+        $name = $rows['food_name'];
+        $description = $rows['food_description'];
+        $price = $rows['food_price'];
     }
     else {
         echo"<script>alert('No data from db! Technical errors!');</script>";
-        die("<script>window.location.href='view.php';</script>");
+        die("<script>window.location.href='insertFood.php';</script>");
     }
 
 
@@ -46,25 +47,32 @@ include "header.php";
         <div class="row edit">
             <div class="col-12">
                 <h1>Edit Page: </h1>
-                <form method="post" action="update.php">
+                <form method="post" action="updateLocal.php">
                 <table>
                 <tr>
-                    <th width="200px">ID:</th>
+                    <th width="200px">Food ID:</th>
                     <td width="300px">
-                    <input type="number" name="uid" value="<?php echo $id;?>" readonly/>
+                    <input type="number" name="food_ID" value="<?php echo $id;?>" readonly/>
                     </td>
                 </tr>
                 <tr>
-                    <th width="200px">Name:</th>
+                    <th width="200px">Food Name:</th>
                     <td width="300px">
-                    <input type="text" name="name" value="<?php echo $name;?>"
+                    <input type="text" name="food_name" value="<?php echo $name;?>"
                     required="required"/>
                     </td>
                 </tr>
                 <tr>
-                    <th width="200px">Email:</th>
+                    <th width="200px">Food Description:</th>
                     <td width="300px">
-                    <input type="text" name="email_address" value="<?php echo $email;?>"
+                    <input type="text" name="food_description" value="<?php echo $description;?>"
+                    required="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="200px">Food Price:</th>
+                    <td width="300px">
+                    <input type="text" name="food_price" value="<?php echo $price;?>"
                     required="required"/>
                     </td>
                 </tr>
@@ -74,7 +82,7 @@ include "header.php";
                 <br/>
 
                 <input type="submit" class='btn btn-outline-dark btn-reg' value="Update"/>
-                <input type="submit" class='btn btn-outline-dark btn-reg' value="Back to Previous Page" formaction="admin.php"/>
+                <input type="submit" class='btn btn-outline-dark btn-reg' value="Back to Previous Page" formaction="addEditFood.php"/>
 
                 </td>
                 </tr>

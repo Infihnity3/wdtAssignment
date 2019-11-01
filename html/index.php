@@ -31,15 +31,12 @@
         .navbar-logo{
         margin-left: 52%;
         }
-        .btn-reg{
-        margin-left: 30%;
-        margin-top: 6%;
-        }
+
 
         /*Join Us Now*/
         .btn-join{
         margin-top: 20%;
-        margin-left: 48%;
+        margin-left: 45.5%;
         }
         /*Footer*/
         .page-footer{

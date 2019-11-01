@@ -1,67 +1,81 @@
 <?php
-    session_start();
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
 
-        body{
+if(isset($_POST['insert'])) {
+    include("conn.php");
 
-        background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
+    $name = mysqli_real_escape_string($conn,$_POST['name']);
+    $price = mysqli_real_escape_string($conn,$_POST['price']);
+    $description = mysqli_real_escape_string($conn,$_POST['description']);
+    $foodI= $_FILES['image'];
+
+
+$target_dir = "foodImage/";
+//the basename($_FILES["photo"]["name"]) means to get the basename
+//(e.g. test.docx) from the file path (e.g. D://images/test.docx)
+$target_file = $target_dir . basename($_FILES["image"]["name"]);
+//to get the extension of the file (e.g. docx)
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+// Check if image file is a actual image or fake image
+$check = getimagesize($_FILES["image"]["tmp_name"]);
+if($check !== false)
+{
+echo "<script>alert('File is an image - " . $check["mime"] .".');</script>";
+}
+else
+{
+echo "<script>alert('File is not an image.Please try again!');</script>";
+die("<script>window.history.go(-1);</script>");
+}
+
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" &&
+$imageFileType != "jpeg" && $imageFileType != "gif" )
+{
+echo "<script>alert('Sorry, only JPG, JPEG, PNG & GIF files are
+allowed.Please try again!');</script>";
+die("<script>window.history.go(-1);</script>");
+}
+
+//move the file using move_uploaded_file function.
+//If not success transfer, give alert message!
+if (! move_uploaded_file($_FILES["image"]["tmp_name"], $target_file))
+{
+echo "<script>alert('Unable to upload photo.Thus, data will not be
+inserted to database. Please try again!');</script>";
+die("<script>window.history.go(-1);</script>");
+}
+    if(isset($_POST['submit'])){
+    $selected_cui = $_POST['cuisines'];
+   
+    //step 3: create the SQL statement (since this is insert)
+    if($selected_cui === "1"){
+        $sql = "INSERT INTO local_food (food_name, food_price, food_description, food_img) VALUES ('$name','$price','$description','$target_file')";
+        if(mysqli_query($conn, $sql)) {
+            echo "<script>alert('The file was uploaded successful'); window.location='insertFood.php'</script>";
+        }else{
+            die('Error :' . mysqli_error($conn));
         }
-        a{
-            color: #131212;
+        mysqli_close($conn);
+        
+    } else if($selected_cui === "2"){
+        $sql = "INSERT INTO thai_food (food_name, food_price, food_description, food_img) VALUES ('$name','$price','$description','$target_file')";
+        if(mysqli_query($conn, $sql)) {
+            echo "<script>alert('The file was uploaded successful'); window.location='insertFood.php'</script>";
+        }else{
+            die('Error :' . mysqli_error($conn));
         }
-        .addF{
-            margin-top: 15%;
+        mysqli_close($conn);
+        
+    } else if($selected_cui === "3"){
+        $sql = "INSERT INTO japanese_food (food_name, food_price, food_description, food_img) VALUES ('$name','$price','$description','$target_file')";
+        if(mysqli_query($conn, $sql)) {
+            echo "<script>alert('The file was uploaded successful'); window.location='insertFood.php'</script>";
+        }else{
+            die('Error :' . mysqli_error($conn));
         }
-        .food {
-            width: 25%;
-        }
-
-    </style>
-</head>
-
-
-<body>
-    <?php
-        include "header.php";
+        mysqli_close($conn);
+    } 
+}
     ?>
-    <div class="container-fluid addF">
-        <div class="row">
-            <div class="col-6">
-            <form action="insert1.php" method="POST" enctype="multipart/form-data">
-                <div class="foodN">
-                    <p>Food Name: </p><input type="text" name="name" placeholder="Name.." height="10px" class="food" required>
-                </div>
-                <div class="foodD">
-                    <p>Food Description: </p><input type="text" name="description" placeholder="Description.." class="food" required>
-                </div>
-                
-                <div class="foodP">
-                    <p>Food Price: </p><input type="number" name="price" placeholder="Price.." class="food" required>
-                </div>
-                <div class="foodI">
-                    <p>Food Image: </p><input type="file" name="image" id="photo" class="food" required>
-                </div>
-                    <input class="btn btn-outline-dark btn-reg" type="submit" name="insert">
-                </div>
-            </form>
-            </div>
-       
-        </div>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>

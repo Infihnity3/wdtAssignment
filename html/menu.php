@@ -12,15 +12,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/menu.css" type="text/css">
     <style>
-    .container{
-        background: linear-gradient(45deg, rgba(255,229,180,1) 0%, rgba(193,154,107,1) 100%);
-    }
+
     .btn {
-        margin-left: 47.5%; 
+        margin-left: 45.5%; 
     }
     .card{
-        width:200px;
-        height:150px;
+        width:410px;
+        height:362px;
+    }
+    .posW{
+        margin-top:15%;
     }
     </style>
 </head>
@@ -28,86 +29,71 @@
     <?php
     include "header2.php";
     ?>
-   
-    <div class="container">
-    <div class="row">
+<div class='container-fluid'>
+        <div class='row'> 
+        <div class='posW'>
         <div class="col-lg-10 mx-auto col-12 text-center mb-3">
             <h1 class="mt-0 text-primary">Our Menu</h1>
             <p class="lead">Begin with a selection from our award winning dishes.</p>
         </div>
         <div class="col-12 mt-4">
             <h3 class="text-center">Local</h3>
-            <hr class="accent my-5">
+            <hr>
         </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">RM10</span>
-                <h6 class="text-truncate">Nasi Lemak</h6>
-                <p class="small">fragrant rice served with sambal and eggs</p>
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">RM10</span>
-                <h6 class="text-truncate">Roti Canai</h6>
-                <p class="small">Made from douch which is composed by fat, flour and water</p>
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">RM10</span>
-                <h6 class="text-truncate">Char Kuey Teow</h6>
-                <p class="small">Flat rice noodles sweet soy sauce with ingredients such as egg, chinese waxed sausage, breanspouts and cockles. </p>
-            </div>
-            
-           
-        </div>
-        <div class="col-12 mt-4">
-            <h3 class="text-center">Japanese</h3>
-            <hr class="accent my-5">
-        </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">RM150</span>
-                <h6 class="text-truncate">Nigiri Sushi</h6>
-                <p class="small">Slices of raw fish served with hand pressed vinegared rice.</p>
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">RM750</span>
-                <h6 class="text-truncate">Tuna Sashimi</h6>
-                <p class="small">Sliced raw tuna from diffrent parts of the Tuna.</p>
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">RM75</span>
-                <h6 class="text-truncate">Tempura</h6>
-                <p class="small">Vegetables and seafood dipped in a batter and fried in deep fat.</p>
-            </div>
-
+        <div class='card-columns'>
+        <?php     
+            $result = mysqli_query($conn, "SELECT * FROM local_food");                  
+            while($row = mysqli_fetch_array($result))
+            {
+                echo  "<div class='card card-body'>
+                        <div><img src=".$row["food_img"]." alt='' width='368' height='200'></div>
+                        <div>".$row["food_name"]."</div>
+                        <div>".$row["food_description"]."</a></div>
+                        <div>RM ".$row["food_price"]."</div>
+                    </div>";
+            }
+		?>
         </div>
         <div class="col-12 mt-4">
             <h3 class="text-center">Thai</h3>
-            <hr class="accent my-5">
+            <hr>
         </div>
-        <div class="card-columns">
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">RM50</span>
-                <h6 class="text-underline">Thai Fried Rice</h6>
-                <p class="small">Fried jasmine rice served with a handful of seafood</p>
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">RM65</span>
-                <h6>Tom Yum</h6>
-                <p class="small">
-                  Sour Thai soup served with seafood.</p>
-            </div>
-            <div class="card card-body">
-                <span class="float-right font-weight-bold">RM50</span>
-                <h6>Green Curry</h6>
-                <p class="small">
-                   Seafood served with curry cooked with green curry paste with ingredients such as green chilis and ginger.</p>
-            </div>
-            
+        <div class='card-columns'>
+        <?php                       
+            $result = mysqli_query($conn, "SELECT * FROM thai_food");
+            while($row = mysqli_fetch_array($result))
+            {
+                echo  "<div class='card card-body'>
+                        <div><img src=".$row["food_img"]." alt='' width='368' height='200'></div>
+                        <div>".$row["food_name"]."</div>
+                        <div>".$row["food_description"]."</a></div>
+                        <div>RM ".$row["food_price"]."</div>
+                    </div>";
+            }
+		?>
         </div>
         <div class="col-12 mt-4">
-            <hr class="accent my-5">
+            <h3 class="text-center">Japanese</h3>
+            <hr>
         </div>
-        <div class="container-fluid ordB">   
+        <div class='card-columns'>
+        <?php                       
+            $result = mysqli_query($conn, "SELECT * FROM japanese_food");
+            while($row = mysqli_fetch_array($result))
+            {
+                echo  "<div class='card card-body'>
+                        <div><img src=".$row["food_img"]." alt='' width='368' height='200'></div>
+                        <div>".$row["food_name"]."</div>
+                        <div>".$row["food_description"]."</a></div>
+                        <div>RM ".$row["food_price"]."</div>
+                    </div>";
+            }
+		?>
+        </div>
+        </div>
+        </div>
+	</div>
+    <div class="container-fluid ordB">   
         <div class="row bgcolor">
             <div class="col-12">
                 <a href="order.php">
@@ -115,9 +101,6 @@
                 </a>    
             </div>
         </div>
-    </div>
-    </div>
-</div>
      <?php
      include "footer.php";
      ?>
