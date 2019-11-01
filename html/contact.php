@@ -28,28 +28,25 @@
     </style>
 </head>
 
-
-<body>
-    <?php
+<?php
         include "header.php";
-    ?>
+?>
+<body>
+    
     <div class="container-fluid dash">
         <div class="row">
             <div class="col-6">
-                <h1>User Information:</h1>
+          
+                <h1>Contact Form:</h1>
                 <br>
                 <table border="1" style="table table-dark table-hover">
-                    <tr bgcolor="f1f1f1">
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Last Login</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-
-                        <?php
+                            <tr bgcolor="f1f1f1">
+                                <th>Email</th>
+                                <th>Message</th>
+                            </tr>
+                            <?php
                             include "conn.php";//add connection to the php page
-                            $sql = "select * from users";//add a new sql query
+                            $sql = "select * from contact";//add a new sql query
                             $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
                             
                             if(mysqli_num_rows($result)<=0)//if no result, then run the die() code
@@ -61,22 +58,18 @@
                             while($rows = mysqli_fetch_array($result))
                             {
                                 echo "<tr>";
-                                echo "<td>".$rows['user_name']."</td>";
-                                echo "<td>".$rows['user_email']."</td>";
-                                echo "<td>".$rows['user_last_login']."</td>";
+                            
+                                echo "<td>".$rows['contact_email']."</td>";
+                                echo "<td>".$rows['contact_message']."</td>";
 
-                                //create 2 buttons (edit button and delte button in each row)
-                                echo "<td><a href='edit.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark ' >Edit</button></a></td>";
-                                echo "<td><a href='delete.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark' >Delete</button></a></td>";
                                 echo "</tr>";
                             }
                         ?>
+
+
                 </table>
-                
-                
                
             </div>
-       
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>

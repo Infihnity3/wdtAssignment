@@ -1,6 +1,3 @@
-<?php
-session_start();    
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -100,32 +97,21 @@ session_start();
     <div class="container-fluid fixed-top">
             <div class="row">
                 <div class="col-6">
-                    <img class="navbar-logo" src="image/logo.png" alt="Simple Food Inc" width="150" height="150" class="txtlogo"</a>
+                    <img class="navbar-logo" src="image/logo.png" alt="Simple Food Inc" width="150" height="150" class="txtlogo">
                 </div>
                 <div class="col-6">
-                    <div class="dropdown">
-                        <?php
-                         include ('conn.php');
-                    
-                         if (isset($_SESSION['user'])){//if successfully login then display user name
-                            
-                             echo '<button type="button" class="btn btn-outline-dark dropdown-toggle btn-reg" data-toggle="dropdown">'.$_SESSION['user'].'  
-                        </button>';
-                        echo '<div class="dropdown-menu">';
-                            echo '<a class="dropdown-item" href="home.php">Home</a>';
-                           echo '<a class="dropdown-item" href="dashboard.php">Dashboard</a>';
-                            echo '<a class="dropdown-item" href="#contact">Help</a>';
-                           echo '<a class="dropdown-item" href="Logout.php">Log Out</a>';
-                        echo '</div>';
-                         }else{
-                        echo'<a href="Register.php">
-                       <button type="button" class="btn btn-outline-dark btn-reg" >
-                        Log In / Register
-                        </button>
-                        </a>';
-                    }
-                    ?>
+                <div class="dropdown">
+                    <button class="btn btn-outline-dark dropdown-toggle btn-reg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="admin.php">User Information</a>
+                        <a class="dropdown-item" href="insertFood.php">Add Item</a>
+                        <a class="dropdown-item" href="contact.php">Contact Form</a>
+                        <a class="dropdown-item" href="Logout.php">Log Out</a>
                     </div>
+                </div>
+                    
                 </div>
             </div>
         </div>
