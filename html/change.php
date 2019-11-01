@@ -7,7 +7,6 @@ session_start();
     $username = $_POST['user'];
 
     $sql = "Update users Set ".
-
     "user_email = '$email',".
     "user_password = '$pass',".
     "user_name = '$username'";

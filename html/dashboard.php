@@ -30,6 +30,9 @@
             width:25%;
             line-height:10px;
         }
+        .chgPass{
+            width: 25%;
+        }
         input[type=text] {
             font-size:15px;
             height: 5%;
@@ -54,23 +57,27 @@
 
                     $sql;
                     if($rows = mysqli_fetch_array($result)){
-                        $email = $rows['user_email'];
-                        $password = $rows['user_password'];
-                        $username = $rows['user_name'];
+                        $uID = $rows['user_ID'];
+                        $email1 = $rows['user_email'];
+                        $password1 = $rows['user_password'];
+                        $username1 = $rows['user_name'];
                     }
                    
                 ?>
             <h1>Settings</h1>
             <form action="change.php" method="POST">
+                <div class="noChg">
+                    <p>User ID: </p><input type="number" name="ID" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $uID; ?>" readonly><br><br>
+                </div>
                 <div class="chgUser">
-                    <p>Change Username: </p><input type="text" name="user" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $username; ?>">
+                    <p>Change Username: </p><input type="text" name="user" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $username1; ?>">
                 </div>
                 <div class="chgEmail">
-                    <p>Change Email: </p><input type="email" name="email" placeholder="Change your email here" class="chg chgE" value="<?php echo $email; ?>">
+                    <p>Change Email: </p><input type="email" name="email" placeholder="Change your email here" class="chg chgE" value="<?php echo $email1; ?>"><br><br>
                 </div>
                 
                 <div class="chgPass">
-                    <p>Change Password: </p><input type="password" name="password" placeholder="Change your password here" class="chg chgP" value="<?php echo $password; ?>">
+                    <p>Change Password: </p><input type="text" name="password" placeholder="Change your password here" class="chg chgP" value="<?php echo $password1; ?>">
                 </div>
                     <input class="btn btn-outline-dark btn-reg" type="submit">
                 </div>

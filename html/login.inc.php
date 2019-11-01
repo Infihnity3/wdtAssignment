@@ -22,7 +22,7 @@ if(mysqli_num_rows($result)<=0)
     {
     echo "<script>alert('Wrong email / password ! Please
     Try Again!');";
-    die("window.history.go(-1);</script>");
+    die("window.location.href='login1.php';</script>");
     }
 }
 if($row=mysqli_fetch_array($result))

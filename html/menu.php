@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="CSS/menu.css" type="text/css">
     <style>
 
-    .btn {
-        margin-left: 45.5%; 
+    .btn-order {
+        margin-left: 47%; 
     }
     .card{
         width:410px;
@@ -29,7 +29,7 @@
     <?php
     include "header2.php";
     ?>
-<div class='container-fluid'>
+<div class='container'>
         <div class='row'> 
         <div class='posW'>
         <div class="col-lg-10 mx-auto col-12 text-center mb-3">
@@ -46,7 +46,7 @@
             while($row = mysqli_fetch_array($result))
             {
                 echo  "<div class='card card-body'>
-                        <div><img src=".$row["food_img"]." alt='' width='368' height='200'></div>
+                        <div><img src=".$row["food_img"]." alt='' width='200' height='200'></div>
                         <div>".$row["food_name"]."</div>
                         <div>".$row["food_description"]."</a></div>
                         <div>RM ".$row["food_price"]."</div>
@@ -64,7 +64,7 @@
             while($row = mysqli_fetch_array($result))
             {
                 echo  "<div class='card card-body'>
-                        <div><img src=".$row["food_img"]." alt='' width='368' height='200'></div>
+                        <div><img src=".$row["food_img"]." alt='' width='325' height='200'></div>
                         <div>".$row["food_name"]."</div>
                         <div>".$row["food_description"]."</a></div>
                         <div>RM ".$row["food_price"]."</div>
@@ -97,7 +97,7 @@
         <div class="row bgcolor">
             <div class="col-12">
                 <a href="order.php">
-                <button type="button" class="btn btn-outline-dark btn-main"><b>Order Now</b></button>
+                <button type="button" class="btn btn-outline-dark btn-main btn-order"><b>Order Now</b></button>
                 </a>    
             </div>
         </div>
