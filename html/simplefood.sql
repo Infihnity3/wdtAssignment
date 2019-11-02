@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 01, 2019 at 12:18 PM
+-- Generation Time: Nov 02, 2019 at 10:56 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `contact_email` varchar(255) NOT NULL,
   `contact_message` text NOT NULL,
   PRIMARY KEY (`contact_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `contact`
@@ -46,30 +46,62 @@ INSERT INTO `contact` (`contact_id`, `contact_email`, `contact_message`) VALUES
 (3, '2@2.com', 'hohoho'),
 (4, 'sdaf@fas.com', 'dsafd\r\n'),
 (5, 'zack@gmail.com', 'dwq'),
-(6, '', '');
+(7, 'zack@gmail.com', '123');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `enquiry`
+-- Table structure for table `japanese_food`
 --
 
-DROP TABLE IF EXISTS `enquiry`;
-CREATE TABLE IF NOT EXISTS `enquiry` (
-  `enquiry_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `enquiry_email` varchar(255) NOT NULL,
-  `enquiry_message` text NOT NULL,
-  PRIMARY KEY (`enquiry_ID`)
+DROP TABLE IF EXISTS `japanese_food`;
+CREATE TABLE IF NOT EXISTS `japanese_food` (
+  `food_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `food_name` varchar(50) NOT NULL,
+  `food_description` varchar(255) NOT NULL,
+  `food_price` int(11) NOT NULL,
+  `food_img` text NOT NULL,
+  PRIMARY KEY (`food_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `food`
+-- Table structure for table `local_food`
 --
 
-DROP TABLE IF EXISTS `food`;
-CREATE TABLE IF NOT EXISTS `food` (
+DROP TABLE IF EXISTS `local_food`;
+CREATE TABLE IF NOT EXISTS `local_food` (
+  `food_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `food_name` varchar(50) NOT NULL,
+  `food_description` varchar(255) NOT NULL,
+  `food_price` int(11) NOT NULL,
+  `food_img` text NOT NULL,
+  PRIMARY KEY (`food_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orderfood`
+--
+
+DROP TABLE IF EXISTS `orderfood`;
+CREATE TABLE IF NOT EXISTS `orderfood` (
+  `order_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `order_name` varchar(50) NOT NULL,
+  `order_price` int(11) NOT NULL,
+  PRIMARY KEY (`order_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thai_food`
+--
+
+DROP TABLE IF EXISTS `thai_food`;
+CREATE TABLE IF NOT EXISTS `thai_food` (
   `food_ID` int(11) NOT NULL AUTO_INCREMENT,
   `food_name` varchar(50) NOT NULL,
   `food_description` varchar(255) NOT NULL,
@@ -79,11 +111,11 @@ CREATE TABLE IF NOT EXISTS `food` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `food`
+-- Dumping data for table `thai_food`
 --
 
-INSERT INTO `food` (`food_ID`, `food_name`, `food_description`, `food_price`, `food_img`) VALUES
-(9, 'Thai Fried Rice', 'Fried jasmine rice served with a handful of seafood', 30, 'foodImage/thaiFriedRice.jpg'),
+INSERT INTO `thai_food` (`food_ID`, `food_name`, `food_description`, `food_price`, `food_img`) VALUES
+(9, 'Thai Fried Rice', 'Fried jasmine rice served with a handful of seafood', 150, 'foodImage/thaiFriedRice.jpg'),
 (7, 'Tom Yum', 'Sour Thai soup served with seafood.', 25, 'foodImage/tomYum.jpg');
 
 -- --------------------------------------------------------
@@ -109,10 +141,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`user_ID`, `user_name`, `user_password`, `user_email`, `user_role`, `user_last_login`) VALUES
 (54, 'admin_01', 'admin_01', 'admin_01@gmail.com', 0, '2019-10-10 13:00:00'),
-(52, 'zack', 'zack', 'zack@gmail.com', 1, '2019-10-30 05:14:14'),
-(58, '1', 'c4ca4238a0b923820dcc509a6f75849b', '1@gmail.com', 1, '2019-10-31 05:57:24'),
-(59, '2', 'c81e728d9d4c2f636f067f89cc14862c', '2@gmail.com', 1, '2019-10-31 05:57:35'),
-(60, '3', 'eccbc87e4b5ce2fe28308fd9f2a7baf3', '3@gmail.com', 1, '2019-10-31 05:57:49');
+(52, 'zack', 'zack', 'zack@gmail.com', 1, '2019-10-30 05:14:14');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
