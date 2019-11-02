@@ -12,9 +12,9 @@
 
     if(mysqli_affected_rows($conn) <= 0){
         die("<script>alert('Cannot update data!');</script>");
-        echo "<script>window.location.href='editLocal.php?id=$uid';</script>";
+        echo "<script>window.location.href='editLocal.php?id=$fid';</script>";
     }
 
     echo "<script>alert('Update Data Successfully!');</script>";
-    echo "<script>window.location.href='editLocal.php?id=$uid';</script>";
+    echo "<script>window.location.href='editLocal.php?id=$fid';</script>";
 ?>

@@ -67,23 +67,49 @@
             <h1>Settings</h1>
             <form action="change.php" method="POST">
                 <div class="noChg">
-                    <p>User ID: </p><input type="number" name="ID" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $uID; ?>" readonly><br><br>
+                    <p>User ID: </p><input type="number" name="ID" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $uID ?>" readonly><br><br>
                 </div>
                 <div class="chgUser">
-                    <p>Change Username: </p><input type="text" name="user" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $username1; ?>">
+                    <p>Change Username: </p><input type="text" name="user" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $username1 ?>">
                 </div>
                 <div class="chgEmail">
-                    <p>Change Email: </p><input type="email" name="email" placeholder="Change your email here" class="chg chgE" value="<?php echo $email1; ?>"><br><br>
+                    <p>Change Email: </p><input type="email" name="email" placeholder="Change your email here" class="chg chgE" value="<?php echo $email1 ?>"><br><br>
                 </div>
                 
                 <div class="chgPass">
-                    <p>Change Password: </p><input type="text" name="password" placeholder="Change your password here" class="chg chgP" value="<?php echo $password1; ?>">
+                    <p>Change Password: </p><input type="text" name="password" placeholder="Change your password here" class="chg chgP" value="<?php echo $password1 ?>">
                 </div>
                     <input class="btn btn-outline-dark btn-reg" type="submit">
                 </div>
             </form>
             <div class="col-6">
                 <h1>My Orders</h1>
+                <table border="1" class="table table-dark">
+                    <tr bgcolor="f1f1f1" style="color:#131212">
+                        <th>Food Name</th>
+                        <th>Food Price</th>
+                    </tr>
+
+                        <?php
+                            include "conn.php";//add connection to the php page
+                            $sql = "select * from orderfood";//add a new sql query
+                            $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
+                            
+                            if(mysqli_num_rows($result)<=0)//if no result, then run the die() code
+                            {
+                                die("<script>alert('No data from database!');</script>");
+                            }
+
+                            //if got result, extract the data in $rows[] array (column by column)
+                            while($rows = mysqli_fetch_array($result))
+                            {
+                                echo "<tr>";
+                                echo "<td>".$rows['order_name']."</td>";
+                                echo "<td>".$rows['order_price']."</td>";
+                                echo "</tr>";
+                            }
+                        ?>
+                </table>
             </div>
             
         </div>

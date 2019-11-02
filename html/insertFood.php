@@ -77,5 +77,5 @@ die("<script>window.history.go(-1);</script>");
         }
         mysqli_close($conn);
     } 
-}
+    }
     ?>

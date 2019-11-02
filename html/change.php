@@ -1,24 +1,24 @@
 <?php
 include "conn.php";
-session_start();
-   
-    $email =$_POST['email'];
-    $pass =$_POST['password'];
-    $username = $_POST['user'];
+
+    $uid =$_POST['ID'];
+    $email1 =$_POST['email'];
+    $password1 =$_POST['password'];
+    $username1 = $_POST['user'];
 
     $sql = "Update users Set ".
-    "user_email = '$email',".
-    "user_password = '$pass',".
-    "user_name = '$username'";
+    "user_email = '$email1',".
+    "user_password = '$password1',".
+    "user_name = '$username1' Where user_id = $uid";
 
     mysqli_query($conn, $sql);
 
     if(mysqli_affected_rows($conn)<=0){
-        echo "<script>alert('Error 404');</script>";
-        echo "<script>window.location.href='dashboard.php';</script>";
+        die ("<script>alert('Error 404');</script>")   ;
+        echo "<script>window.location.href='dashboard.php?id=$uid';</script>";
     } else{
         echo "<script>alert('Changed successfully');</script>";
-        echo "<script>window.location.href='dashboard.php';</script>";
+        echo "<script>window.location.href='dashboard.php?id=$uid';</script>";
     }
 
 ?>

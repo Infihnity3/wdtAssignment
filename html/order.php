@@ -49,7 +49,7 @@
         <h1 class="labelPos">Please choose the food that you would like to order:</h1>
         <div class="select">
             <p> *You can select up to 3 choices of different cuisines</p>
-
+    <form action="orderFood.php" method="POST">
             <select class='custom-select custom-select-sm selectPos' required>
             <option selected>Open this select menu</option>
 <?php
@@ -61,12 +61,6 @@
             echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
                     
         }
-?>
-            </select>
-            <select class='custom-select custom-select-sm selectPos' required>
-            <option selected>Open this select menu</option>
-<?php
-    include "conn.php";
     $sql = "select * from thai_food";
     $result =mysqli_query($conn, $sql);
 
@@ -74,11 +68,60 @@
             echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
                     
         }
+    $sql = "select * from japanese_food";
+    $result =mysqli_query($conn, $sql);
+
+        while($rows = mysqli_fetch_array($result)){
+            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                    
+        }
+    
 ?>
-            </select><select class='custom-select custom-select-sm selectPos' required>
+            </select>
+            <select class='custom-select custom-select-sm selectPos'>
             <option selected>Open this select menu</option>
 <?php
     include "conn.php";
+    $sql = "select * from local_food";
+    $result =mysqli_query($conn, $sql);
+
+        while($rows = mysqli_fetch_array($result)){
+            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                    
+        }
+    $sql = "select * from thai_food";
+    $result =mysqli_query($conn, $sql);
+
+        while($rows = mysqli_fetch_array($result)){
+            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                    
+        }
+    $sql = "select * from japanese_food";
+    $result =mysqli_query($conn, $sql);
+
+        while($rows = mysqli_fetch_array($result)){
+            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                    
+        }
+?>
+            </select><select class='custom-select custom-select-sm selectPos'>
+            <option selected>Open this select menu</option>
+<?php
+    include "conn.php";
+    $sql = "select * from local_food";
+    $result =mysqli_query($conn, $sql);
+
+        while($rows = mysqli_fetch_array($result)){
+            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                    
+        }
+    $sql = "select * from thai_food";
+    $result =mysqli_query($conn, $sql);
+
+        while($rows = mysqli_fetch_array($result)){
+            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                    
+        }
     $sql = "select * from japanese_food";
     $result =mysqli_query($conn, $sql);
 
@@ -89,9 +132,10 @@
 ?>
             </select>
         </div>
-    <a href="confirmOrder.php">
+    <a href="#">
         <button class="btn btn-outline-dark btn-main">Confirm Order</button>
     </a>
+    </form>
     <?php
     include "footer.php";
     ?>

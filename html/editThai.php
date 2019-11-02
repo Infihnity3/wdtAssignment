@@ -29,6 +29,7 @@ include "header.php";
     include "conn.php";
     $id = $_GET['id'];//edit.php?id=1
     $sql = "select * from thai_Food where food_ID = $id";
+    
     $result = mysqli_query($conn, $sql);
     if($rows = mysqli_fetch_array($result)){
         $name = $rows['food_name'];
