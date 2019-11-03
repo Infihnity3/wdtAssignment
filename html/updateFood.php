@@ -5,16 +5,21 @@
     $name = $_POST['food_name'];
     $description = $_POST['food_description'];
     $price = $_POST['food_price'];
+    $type = $_POST['food_type'];
 
-    $sql = "Update local_food SET food_name = '$name',food_description = '$description', food_price = '$price' Where food_ID = $fid";
+    $sql = "Update food SET ".
+    "food_name = '$name',".
+    "food_description = '$description',". 
+    "food_price = '$price',".
+    "food_type = '$type' Where food_ID = $fid";
     // echo $sql;
     mysqli_query($conn, $sql);
 
     if(mysqli_affected_rows($conn) <= 0){
         die("<script>alert('Cannot update data!');</script>");
-        echo "<script>window.location.href='editLocal.php?id=$fid';</script>";
+        echo "<script>window.location.href='editFood.php?id=$fid';</script>";
     }
 
     echo "<script>alert('Update Data Successfully!');</script>";
-    echo "<script>window.location.href='editLocal.php?id=$fid';</script>";
+    echo "<script>window.location.href='editFood.php?id=$fid';</script>";
 ?>

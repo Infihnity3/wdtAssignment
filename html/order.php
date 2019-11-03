@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,84 +52,43 @@
             <p> *You can select up to 3 choices of different cuisines</p>
     <form action="orderFood.php" method="POST">
             <select class='custom-select custom-select-sm selectPos' required>
-            <option selected>Open this select menu</option>
+            <option selected>Open this select menu to order</option>
 <?php
     include "conn.php";
-    $sql = "select * from local_food";
+    $sql = "select * from food";
     $result =mysqli_query($conn, $sql);
 
         while($rows = mysqli_fetch_array($result)){
-            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+            echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
                     
         }
-    $sql = "select * from thai_food";
-    $result =mysqli_query($conn, $sql);
 
-        while($rows = mysqli_fetch_array($result)){
-            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
-                    
-        }
-    $sql = "select * from japanese_food";
-    $result =mysqli_query($conn, $sql);
-
-        while($rows = mysqli_fetch_array($result)){
-            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
-                    
-        }
-    
 ?>
             </select>
             <select class='custom-select custom-select-sm selectPos'>
-            <option selected>Open this select menu</option>
+            <option  selected>Open this select menu to order</option>
 <?php
     include "conn.php";
-    $sql = "select * from local_food";
+    $sql = "select * from food";
     $result =mysqli_query($conn, $sql);
 
         while($rows = mysqli_fetch_array($result)){
-            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
-                    
-        }
-    $sql = "select * from thai_food";
-    $result =mysqli_query($conn, $sql);
-
-        while($rows = mysqli_fetch_array($result)){
-            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
-                    
-        }
-    $sql = "select * from japanese_food";
-    $result =mysqli_query($conn, $sql);
-
-        while($rows = mysqli_fetch_array($result)){
-            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+            echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
                     
         }
 ?>
             </select><select class='custom-select custom-select-sm selectPos'>
-            <option selected>Open this select menu</option>
+            <option selected>Open this select menu to order</option>
 <?php
     include "conn.php";
-    $sql = "select * from local_food";
+    $sql = "select * from food";
     $result =mysqli_query($conn, $sql);
 
         while($rows = mysqli_fetch_array($result)){
-            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+            echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
                     
         }
-    $sql = "select * from thai_food";
-    $result =mysqli_query($conn, $sql);
-
-        while($rows = mysqli_fetch_array($result)){
-            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
-                    
-        }
-    $sql = "select * from japanese_food";
-    $result =mysqli_query($conn, $sql);
-
-        while($rows = mysqli_fetch_array($result)){
-            echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
-                    
-        }
+    
 ?>
             </select>
         </div>

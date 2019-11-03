@@ -6,7 +6,7 @@ include "conn.php";
 $id = $_GET['id'];
 
 //create sql
-$sql="DELETE FROM japanese_food WHERE food_ID=$id";
+$sql="DELETE FROM food WHERE food_ID=$id";
 mysqli_query($conn, $sql);
 
 //if necessary deleted...then

@@ -51,7 +51,9 @@
         <div class="row">
             <div class="col-6">
                 <?php
+                include "conn.php";
                 $username1=$_SESSION['user'];
+                
                     $sql = "select * from users where user_name='$username1'";//add a new sql query
                     $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
 
@@ -70,7 +72,7 @@
                     <p>User ID: </p><input type="number" name="ID" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $uID ?>" readonly><br><br>
                 </div>
                 <div class="chgUser">
-                    <p>Change Username: </p><input type="text" name="user" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $username1 ?>">
+                    <p>Username: </p><input type="text" name="user" placeholder="Change your username here" height="10px" class="chg chgU" value="<?php echo $username1 ?>" readonly>
                 </div>
                 <div class="chgEmail">
                     <p>Change Email: </p><input type="email" name="email" placeholder="Change your email here" class="chg chgE" value="<?php echo $email1 ?>"><br><br>
@@ -87,7 +89,6 @@
                 <table border="1" class="table table-dark">
                     <tr bgcolor="f1f1f1" style="color:#131212">
                         <th>Food Name</th>
-                        <th>Food Price</th>
                     </tr>
 
                         <?php
@@ -95,17 +96,12 @@
                             $sql = "select * from orderfood";//add a new sql query
                             $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
                             
-                            if(mysqli_num_rows($result)<=0)//if no result, then run the die() code
-                            {
-                                die("<script>alert('No data from database!');</script>");
-                            }
 
                             //if got result, extract the data in $rows[] array (column by column)
                             while($rows = mysqli_fetch_array($result))
                             {
                                 echo "<tr>";
                                 echo "<td>".$rows['order_name']."</td>";
-                                echo "<td>".$rows['order_price']."</td>";
                                 echo "</tr>";
                             }
                         ?>

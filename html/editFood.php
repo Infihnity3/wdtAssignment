@@ -28,18 +28,16 @@ include "header.php";
     //to get all the relevance info from the databasefor that specific item
     include "conn.php";
     $id = $_GET['id'];//edit.php?id=1
-    $sql = "select * from local_Food where food_ID = $id";
+    $sql = "select * from food where food_ID = $id";
+    
     $result = mysqli_query($conn, $sql);
     if($rows = mysqli_fetch_array($result)){
         $name = $rows['food_name'];
         $description = $rows['food_description'];
         $price = $rows['food_price'];
+        $type = $rows['food_type'];
     }
-    else {
-        echo"<script>alert('No data from db! Technical errors!');</script>";
-        die("<script>window.location.href='insertFood.php';</script>");
-    }
-
+  
 
 ?>
 <body>
@@ -47,7 +45,7 @@ include "header.php";
         <div class="row edit">
             <div class="col-12">
                 <h1>Edit Page: </h1>
-                <form method="post" action="updateLocal.php">
+                <form method="post" action="updateFood.php">
                 <table>
                 <tr>
                     <th width="200px">Food ID:</th>
@@ -59,23 +57,29 @@ include "header.php";
                     <th width="200px">Food Name:</th>
                     <td width="300px">
                     <input type="text" name="food_name" value="<?php echo $name;?>"
-                    required="required"/>
+                    required>
                     </td>
                 </tr>
                 <tr>
                     <th width="200px">Food Description:</th>
-                    <td width="300px">
+                    <td width="300px"> 
                     <input type="text" name="food_description" value="<?php echo $description;?>"
-                    required="required"/>
+                    required>
                     </td>
                 </tr>
                 <tr>
                     <th width="200px">Food Price:</th>
                     <td width="300px">
                     <input type="text" name="food_price" value="<?php echo $price;?>"
-                    required="required"/>
+                    required>
                     </td>
                 </tr>
+                <tr>
+                    <th width="200px">Food Type:</th>
+                    <td width="200px">
+                    <input type="text" name="food_type" value="<?php echo $type;?>" required>
+                    </td>
+                </th>
                 
                 <!--update and back button-->
                 <tr><td colspan="2">

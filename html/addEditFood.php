@@ -34,18 +34,7 @@
         .widthS{
             width: 20%;
         }
-        .borderT{
-            background-color: rgba(241,241,241,.7);
-            width: 16%;
-        }
-        .borderL{
-            background-color: rgba(241,241,241,.7);
-            width: 17.5%;
-        }
-        .borderJ{
-            background-color: rgba(241,241,241,.7);
-            width: 23.5%;
-        }
+
     </style>
 </head>
 
@@ -61,7 +50,7 @@
             <form action="insertFood.php" method="POST" enctype="multipart/form-data">
                 <div class="widthS">
                 <p>Choose Cuisine</p>
-                <select id="cuisines" class="custom-select custom-select-sm selectPos" required>
+                <select name="cuisines" class="custom-select custom-select-sm selectPos" required>
                     <option selected>Open this select menu</option>
                     <option value="1">Local</option>
                     <option value="2">Thai</option>
@@ -88,18 +77,18 @@
             <div class="col-6">
                 <h1>Edit Food Items</h1>
                 <table border="1" class="table table-dark">
-                <h2 class="borderT">Thai Food</h2>
                     <tr bgcolor="f1f1f1" style="color:#131212">
                         <th class="paddingN">Name</th>
                         <th>Description</th>
                         <th>Price</th>
                         <th>Edit</th>
                         <th>Delete</th>
+                        <th>Type</th>
                     </tr>
 
                         <?php
                             include "conn.php";//add connection to the php page
-                            $sql = "select * from thai_food";//add a new sql query
+                            $sql = "select * from food";//add a new sql query
                             $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
                             
 
@@ -110,76 +99,16 @@
                                 echo "<td class='paddingN'>".$rows['food_name']."</td>";
                                 echo "<td>".$rows['food_description']."</td>";
                                 echo "<td>".$rows['food_price']."</td>";
+                                echo "<td>".$rows['food_type']."</td>";
 
                                 //create 2 buttons (edit button and delte button in each row)
-                                echo "<td><a href='editThai.php?id=".$rows['food_ID']."'><button  class='btn btn-outline-dark ' style='color:#f1f1f1'>Edit</button></a></td>";
-                                echo "<td><a href='deleteThai.php?id=".$rows['food_ID']."'><button  class='btn btn-outline-dark' style='color:#f1f1f1'>Delete</button></a></td>";
+                                echo "<td><a href='editFood.php?id=".$rows['food_ID']."'><button  class='btn btn-outline-dark ' style='color:#f1f1f1'>Edit</button></a></td>";
+                                echo "<td><a href='deleteFood.php?id=".$rows['food_ID']."'><button  class='btn btn-outline-dark' style='color:#f1f1f1'>Delete</button></a></td>";
                                 echo "</tr>";
                             }
                         ?>
                 </table>
-                <table border="1" class="table table-dark">
-                <h2 class="borderL">Local Food</h2>
-                    <tr bgcolor="f1f1f1" style="color:#131212">
-                        <th class="paddingN">Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-
-                        <?php
-                            include "conn.php";//add connection to the php page
-                            $sql = "select * from local_food";//add a new sql query
-                            $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
-                            
-
-                            //if got result, extract the data in $rows[] array (column by column)
-                            while($rows = mysqli_fetch_array($result))
-                            {
-                                echo "<tr>";
-                                echo "<td class='paddingN'>".$rows['food_name']."</td>";
-                                echo "<td>".$rows['food_description']."</td>";
-                                echo "<td>".$rows['food_price']."</td>";
-
-                                //create 2 buttons (edit button and delte button in each row)
-                                echo "<td><a href='editLocal.php?id=".$rows['food_ID']."'><button  class='btn btn-outline-dark ' style='color:#f1f1f1'>Edit</button></a></td>";
-                                echo "<td><a href='deleteLocal.php?id=".$rows['food_ID']."'><button  class='btn btn-outline-dark' style='color:#f1f1f1'>Delete</button></a></td>";
-                                echo "</tr>";
-                            }
-                        ?>
-                </table>
-                <table border="1" class="table table-dark">
-                <h2 class="borderJ">Japanese Food</h2>
-                    <tr bgcolor="f1f1f1" style="color:#131212">
-                        <th class="paddingN">Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-
-                        <?php
-                            include "conn.php";//add connection to the php page
-                            $sql = "select * from japanese_food";//add a new sql query
-                            $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
-                            
-
-                            //if got result, extract the data in $rows[] array (column by column)
-                            while($rows = mysqli_fetch_array($result))
-                            {
-                                echo "<tr>";
-                                echo "<td class='paddingN'>".$rows['food_name']."</td>";
-                                echo "<td>".$rows['food_description']."</td>";
-                                echo "<td>".$rows['food_price']."</td>";
-
-                                //create 2 buttons (edit button and delte button in each row)
-                                echo "<td><a href='editJapanese.php?id=".$rows['food_ID']."'><button  class='btn btn-outline-dark ' style='color:#f1f1f1'>Edit</button></a></td>";
-                                echo "<td><a href='deleteJapanese.php?id=".$rows['food_ID']."'><button  class='btn btn-outline-dark' style='color:#f1f1f1'>Delete</button></a></td>";
-                                echo "</tr>";
-                            }
-                        ?>
-                </table>
+                
             
             </div>
             </div>

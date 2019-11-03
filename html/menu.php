@@ -42,11 +42,11 @@
         </div>
         <div class='card-columns'>
         <?php     
-            $result = mysqli_query($conn, "SELECT * FROM local_food");                  
-            while($row = mysqli_fetch_array($result))
+            $result = mysqli_query($conn, "SELECT * FROM food WHERE food_type='local'");                  
+            while($row = mysqli_fetch_assoc($result))
             {
                 echo  "<div class='card card-body'>
-                        <div><img src=".$row["food_img"]." alt='' width='200' height='200'></div>
+                        <div><img src=".$row["food_img"]." alt='' width='325' height='200'></div>
                         <div>".$row["food_name"]."</div>
                         <div>".$row["food_description"]."</a></div>
                         <div>RM ".$row["food_price"]."</div>
@@ -60,8 +60,8 @@
         </div>
         <div class='card-columns'>
         <?php                       
-            $result = mysqli_query($conn, "SELECT * FROM thai_food");
-            while($row = mysqli_fetch_array($result))
+            $result = mysqli_query($conn, "SELECT * FROM food WHERE food_type='thai'");
+            while($row = mysqli_fetch_assoc($result))
             {
                 echo  "<div class='card card-body'>
                         <div><img src=".$row["food_img"]." alt='' width='325' height='200'></div>
@@ -78,11 +78,11 @@
         </div>
         <div class='card-columns'>
         <?php                       
-            $result = mysqli_query($conn, "SELECT * FROM japanese_food");
-            while($row = mysqli_fetch_array($result))
+            $result = mysqli_query($conn, "SELECT * FROM food WHERE food_type='japanese'");
+            while($row = mysqli_fetch_assoc($result))
             {
                 echo  "<div class='card card-body'>
-                        <div><img src=".$row["food_img"]." alt='' width='368' height='200'></div>
+                        <div><img src=".$row["food_img"]." alt='' width='325' height='200'></div>
                         <div>".$row["food_name"]."</div>
                         <div>".$row["food_description"]."</a></div>
                         <div>RM ".$row["food_price"]."</div>
