@@ -79,7 +79,7 @@
                 </div>
                 
                 <div class="chgPass">
-                    <p>Change Password: </p><input type="text" name="password" placeholder="Change your password here" class="chg chgP" value="<?php echo $password1 ?>">
+                    <p>Change Password: </p><input type="text" name="password" placeholder="Change your password here" class="chg chgP" value="">
                 </div>
                     <input class="btn btn-outline-dark btn-reg" type="submit">
                 </div>

@@ -8,7 +8,7 @@ include "conn.php";
 
     $sql = "Update users Set ".
     "user_email = '$email1',".
-    "user_password = '$password1',".
+    "user_password = '".md5($password1)."',".
     "user_name = '$username1' Where user_id = $uid";
 
     mysqli_query($conn, $sql);

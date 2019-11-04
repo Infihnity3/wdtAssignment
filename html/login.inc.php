@@ -16,7 +16,7 @@ if(mysqli_num_rows($result)<=0)
 {
     //sql checking for the admin user
     $sql = "Select * from users where user_email = '".$email."'
-    and user_password = '".$password."'";
+    and user_password = '".md5($password)."'";
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result)<=0)
     {

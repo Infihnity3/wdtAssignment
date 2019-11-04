@@ -50,56 +50,57 @@
         <h1 class="labelPos">Please choose the food that you would like to order:</h1>
         <div class="select">
             <p> *You can select up to 3 choices of different cuisines</p>
-    <form action="orderFood.php" method="POST">
+        <form action="orderFood.php" method="POST">
             <select class='custom-select custom-select-sm selectPos' required>
-            <option selected>Open this select menu to order</option>
-<?php
-    include "conn.php";
-    $sql = "select * from food";
-    $result =mysqli_query($conn, $sql);
+            <option name="food_name" selected>Open this select menu to order</option>
+    <?php
+        include "conn.php";
+        $sql = "select * from food";
+        $result =mysqli_query($conn, $sql);
 
-        while($rows = mysqli_fetch_array($result)){
-            echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
-                    
-        }
+            while($rows = mysqli_fetch_array($result)){
+                echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                        
+            }
 
-?>
-            </select>
-            <select class='custom-select custom-select-sm selectPos'>
-            <option  selected>Open this select menu to order</option>
-<?php
-    include "conn.php";
-    $sql = "select * from food";
-    $result =mysqli_query($conn, $sql);
+    ?>
+                </select>
+                <select class='custom-select custom-select-sm selectPos' name='food_name'>
+                <option  selected>Open this select menu to order</option>
+    <?php
+        include "conn.php";
+        $sql = "select * from food";
+        $result =mysqli_query($conn, $sql);
 
-        while($rows = mysqli_fetch_array($result)){
-            echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
-                    
-        }
-?>
-            </select><select class='custom-select custom-select-sm selectPos'>
-            <option selected>Open this select menu to order</option>
-<?php
-    include "conn.php";
-    $sql = "select * from food";
-    $result =mysqli_query($conn, $sql);
+            while($rows = mysqli_fetch_array($result)){
+                echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                        
+            }
+    ?>
+                </select>
+                <select class='custom-select custom-select-sm selectPos' name='food_name'>
+                <option selected>Open this select menu to order</option>
+    <?php
+        include "conn.php";
+        $sql = "select * from food";
+        $result =mysqli_query($conn, $sql);
 
-        while($rows = mysqli_fetch_array($result)){
-            echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
-                    
-        }
-    
-?>
-            </select>
-        </div>
-    <a href="#">
-        <button class="btn btn-outline-dark btn-main">Confirm Order</button>
-    </a>
-    </form>
+            while($rows = mysqli_fetch_array($result)){
+                echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                        
+            }
+        
+    ?>
+                </select>
+            </div>
+        <a href="#">
+            <button class="btn btn-outline-dark btn-main">Confirm Order</button>
+        </a>
+        </form>
     <?php
     include "footer.php";
     ?>
-     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

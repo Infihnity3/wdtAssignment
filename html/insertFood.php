@@ -44,7 +44,7 @@ if(isset($_POST['insert'])) {
                 if($selected_cui === "1"){
                     $sql = "INSERT INTO food (food_name, food_price, food_description, food_img, food_type) VALUES ('$name','$price','$description','$target_file','local')";
                     if(mysqli_query($conn, $sql)) {
-                        echo "<script>alert('The file was uploaded successful'); window.location='addEditFood.php'</script>";
+                        echo "<script>alert('Insert successful'); window.location='addEditFood.php'</script>";
                     }else{
                         die('Error :' . mysqli_error($conn));
                     }
@@ -53,7 +53,7 @@ if(isset($_POST['insert'])) {
                 } else if($selected_cui === "2"){
                     $sql = "INSERT INTO food (food_name, food_price, food_description, food_img, food_type) VALUES ('$name','$price','$description','$target_file','thai')";
                     if(mysqli_query($conn, $sql)) {
-                        echo "<script>alert('The file was uploaded successful'); window.location='addEditFood.php'</script>";
+                        echo "<script>alert('Insert successful'); window.location='addEditFood.php'</script>";
                     }else{
                         die('Error :' . mysqli_error($conn));
                     }
@@ -62,7 +62,7 @@ if(isset($_POST['insert'])) {
                 } else if($selected_cui === "3"){
                     $sql = "INSERT INTO food (food_name, food_price, food_description, food_img, food_type) VALUES ('$name','$price','$description','$target_file','japanese')";
                     if(mysqli_query($conn, $sql)) {
-                        echo "<script>alert('The file was uploaded successful'); window.location='addEditFood.php'</script>";
+                        echo "<script>alert('Insert successful'); window.location='addEditFood.php'</script>";
                     }else{
                         die('Error :' . mysqli_error($conn));
                     }

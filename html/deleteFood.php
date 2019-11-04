@@ -18,7 +18,7 @@ if(mysqli_affected_rows($conn)<=0)
 
 //successfully deleted then...
 
-echo "<script>alert('Data deleted!');</script>";
+echo "<script>alert('Food Item deleted!');</script>";
 echo "<script>window.location.href='addEditFood.php';</script>";
 
 ?>
