@@ -51,21 +51,21 @@
         <div class="select">
             <p> *You can select up to 3 choices of different cuisines</p>
         <form action="orderFood.php" method="POST">
-            <select class='custom-select custom-select-sm selectPos' required>
-            <option name="food_name" selected>Open this select menu to order</option>
+            <select class='custom-select custom-select-sm selectPos' name='food_name' required>
+            <option selected>Open this select menu to order</option>
     <?php
         include "conn.php";
         $sql = "select * from food";
         $result =mysqli_query($conn, $sql);
 
             while($rows = mysqli_fetch_array($result)){
-                echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                echo "<option name='food_name' value=".$rows['food_ID'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
                         
             }
 
     ?>
                 </select>
-                <select class='custom-select custom-select-sm selectPos' name='food_name'>
+                <select class='custom-select custom-select-sm selectPos' name='food_name2'>
                 <option  selected>Open this select menu to order</option>
     <?php
         include "conn.php";
@@ -73,12 +73,12 @@
         $result =mysqli_query($conn, $sql);
 
             while($rows = mysqli_fetch_array($result)){
-                echo "<option value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                echo "<option name='food_name2' value=".$rows['food_ID'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
                         
             }
     ?>
                 </select>
-                <select class='custom-select custom-select-sm selectPos' name='food_name'>
+                <select class='custom-select custom-select-sm selectPos' name='food_name3'>
                 <option selected>Open this select menu to order</option>
     <?php
         include "conn.php";
@@ -86,7 +86,7 @@
         $result =mysqli_query($conn, $sql);
 
             while($rows = mysqli_fetch_array($result)){
-                echo "<option name='food_name' value=".$rows['food_name'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
+                echo "<option name='food_name3' value=".$rows['food_ID'].">".$rows['food_name'].'  '.'RM'.$rows['food_price']."</option>";
                         
             }
         

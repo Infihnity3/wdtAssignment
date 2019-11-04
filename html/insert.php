@@ -1,5 +1,5 @@
 <?php
-    include "connect.php"; //connection
+    include "conn.php"; //connection
   
     //retrieve data from the top
     $email = mysqli_real_escape_string($conn,$_POST['email']);

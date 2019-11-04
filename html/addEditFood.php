@@ -81,9 +81,10 @@
                         <th class="paddingN">Name</th>
                         <th>Description</th>
                         <th>Price</th>
+                        <th>Type</th>
+                        <th>Image</th>
                         <th>Edit</th>
                         <th>Delete</th>
-                        <th>Type</th>
                     </tr>
 
                         <?php
@@ -100,6 +101,7 @@
                                 echo "<td>".$rows['food_description']."</td>";
                                 echo "<td>".$rows['food_price']."</td>";
                                 echo "<td>".$rows['food_type']."</td>";
+                                echo "<td><img src=".$rows['food_img']." alt='' width='325' height='200'></td>";
 
                                 //create 2 buttons (edit button and delte button in each row)
                                 echo "<td><a href='editFood.php?id=".$rows['food_ID']."'><button  class='btn btn-outline-dark ' style='color:#f1f1f1'>Edit</button></a></td>";

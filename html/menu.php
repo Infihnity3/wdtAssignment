@@ -79,13 +79,13 @@
         <div class='card-columns'>
         <?php                       
             $result = mysqli_query($conn, "SELECT * FROM food WHERE food_type='japanese'");
-            while($row = mysqli_fetch_assoc($result))
+            while($rows = mysqli_fetch_assoc($result))
             {
                 echo  "<div class='card card-body'>
-                        <div><img src=".$row["food_img"]." alt='' width='325' height='200'></div>
-                        <div>".$row["food_name"]."</div>
-                        <div>".$row["food_description"]."</a></div>
-                        <div>RM ".$row["food_price"]."</div>
+                        <div><img src=".$rows["food_img"]." alt='' width='325' height='200'></div>
+                        <div>".$rows["food_name"]."</div>
+                        <div>".$rows["food_description"]."</a></div>
+                        <div>RM ".$rows["food_price"]."</div>
                     </div>";
             }
 		?>
