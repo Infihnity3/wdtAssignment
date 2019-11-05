@@ -129,13 +129,12 @@
     $password = mysqli_real_escape_string($conn,$_POST['password']);
     $confirmpassword = mysqli_real_escape_string($conn,$_POST['confirmpass']);
     $email = mysqli_real_escape_string($conn,$_POST['email']);
-    //if passowrd and confirm pass is different then it will not be able to register.
+    //if password and confirm pass is different then it will not be able to register.
     if($password !== $confirmpassword){
         
         echo "<script>alert('Password and confirmed password not same!');";
         die("window.history.go(-1);</script>");
     }
-    // if(isset($email === "select * from user where user_email"))
 
     //insert the data into the database
     $sql = "Insert into users (user_name, user_password, user_email, user_last_login) values ('$username', '".md5($password)."','$email','".date("Y-m-d H:i:s")."');";
