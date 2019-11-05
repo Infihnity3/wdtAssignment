@@ -72,8 +72,27 @@
                             }
                         ?>
                 </table>
-                
-                
+                <h1>User Order Information:</h1>
+                <br>
+                <table border="1" class="table table-dark">
+                    <tr bgcolor="f1f1f1" style="color:#131212">
+                        <th>User Name</th>
+                        <th>Food Name</th>
+                    </tr>
+                    <?php
+                            include "conn.php";//add connection to the php page
+                            $sql = "select food.food_name, orderfood.user_name from food Join orderfood on orderfood.food_ID = food.food_ID WHERE orderfood.food_ID = food.food_ID";
+                            $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
+                            
+                            //if got result, extract the data in $rows[] array (column by column)
+                            while($rows = mysqli_fetch_array($result))
+                            {
+                                echo "<tr>";
+                                echo "<td>".$rows['user_name']."</td>";
+                                echo "<td>".$rows['food_name']."</td>";
+                                echo "</tr>";
+                            }
+                        ?>
                
             </div>
        
