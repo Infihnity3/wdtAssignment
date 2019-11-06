@@ -88,13 +88,14 @@
                 <h1>My Orders</h1>
                 <table border="1" class="table table-dark">
                     <tr bgcolor="f1f1f1" style="color:#131212">
+                        <th>Order ID</th>
                         <th>Food Name</th>
                         <th>Food Price</th>
                     </tr>
 
                         <?php
                             include "conn.php";//add connection to the php page
-                            $sql = "select food.food_name, food.food_price from food Join orderfood on orderfood.food_ID = food.food_ID WHERE orderfood.food_ID = food.food_ID group by food.food_name, food.food_price";//add a new sql query
+                            $sql = "select orderfood.order_ID, food.food_name, food.food_price from food Join orderfood on orderfood.food_ID = food.food_ID WHERE orderfood.food_ID = food.food_ID group by orderfood.order_ID, food.food_name, food.food_price";//add a new sql query
                             $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
                             
 
@@ -102,6 +103,7 @@
                             while($rows = mysqli_fetch_array($result))
                             {
                                 echo "<tr>";
+                                echo "<td>".$rows['order_ID']."</td>";
                                 echo "<td>".$rows['food_name']."</td>";
                                 echo "<td>RM ".$rows['food_price']."</td>";
                                 echo "</tr>";

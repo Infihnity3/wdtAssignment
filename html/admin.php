@@ -47,30 +47,27 @@
                         <th>Delete</th>
                     </tr>
 
-                        <?php
-                            include "conn.php";//add connection to the php page
-                            $sql = "select * from users";//add a new sql query
-                            $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
-                            
-                            if(mysqli_num_rows($result)<=0)//if no result, then run the die() code
-                            {
-                                die("<script>alert('No data from database!');</script>");
-                            }
+<?php
+    include "conn.php";//add connection to the php page
+    $sql = "select * from users";//add a new sql query
+    $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
+    
 
-                            //if got result, extract the data in $rows[] array (column by column)
-                            while($rows = mysqli_fetch_array($result))
-                            {
-                                echo "<tr>";
-                                echo "<td>".$rows['user_name']."</td>";
-                                echo "<td>".$rows['user_email']."</td>";
-                                echo "<td>".$rows['user_last_login']."</td>";
 
-                                //create 2 buttons (edit button and delte button in each row)
-                                echo "<td><a href='edit.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark ' style='color:#f1f1f1'>Edit</button></a></td>";
-                                echo "<td><a href='delete.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark' style='color:#f1f1f1'>Delete</button></a></td>";
-                                echo "</tr>";
-                            }
-                        ?>
+    //if got result, extract the data in $rows[] array (column by column)
+    while($rows = mysqli_fetch_array($result))
+    {   
+        echo "<tr>";
+        echo "<td>".$rows['user_name']."</td>";
+        echo "<td>".$rows['user_email']."</td>";
+        echo "<td>".$rows['user_last_login']."</td>";
+
+        //create 2 buttons (edit button and delte button in each row)
+        echo "<td><a href='edit.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark ' style='color:#f1f1f1'>Edit</button></a></td>";
+        echo "<td><a href='delete.php?id=".$rows['user_ID']."'><button  class='btn btn-outline-dark' style='color:#f1f1f1'>Delete</button></a></td>";
+        echo "</tr>";
+    }
+?>
                 </table>
                 <h1>User Order Information:</h1>
                 <br>
@@ -79,20 +76,20 @@
                         <th>User Name</th>
                         <th>Food Name</th>
                     </tr>
-                    <?php
-                            include "conn.php";//add connection to the php page
-                            $sql = "select food.food_name, orderfood.user_name from food Join orderfood on orderfood.food_ID = food.food_ID WHERE orderfood.food_ID = food.food_ID";
-                            $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
-                            
-                            //if got result, extract the data in $rows[] array (column by column)
-                            while($rows = mysqli_fetch_array($result))
-                            {
-                                echo "<tr>";
-                                echo "<td>".$rows['user_name']."</td>";
-                                echo "<td>".$rows['food_name']."</td>";
-                                echo "</tr>";
-                            }
-                        ?>
+<?php
+        include "conn.php";//add connection to the php page
+        $sql = "select food.food_name, orderfood.user_name from food Join orderfood on orderfood.food_ID = food.food_ID WHERE orderfood.food_ID = food.food_ID";
+        $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
+        
+        //if got result, extract the data in $rows[] array (column by column)
+        while($rows = mysqli_fetch_array($result))
+        {
+            echo "<tr>";
+            echo "<td>".$rows['user_name']."</td>";
+            echo "<td>".$rows['food_name']."</td>";
+            echo "</tr>";
+        }
+?>
                
             </div>
        

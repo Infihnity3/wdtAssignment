@@ -21,7 +21,6 @@
     }else{
          echo "<script>alert('Message Sent!');";
         echo "window.location.href='home.php  ';</script>";
-    }
-    
+    } 
    
 ?>

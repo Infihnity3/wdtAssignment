@@ -2,7 +2,7 @@
 
 
 if(isset($_POST['insert'])) {
-    include("conn.php");
+    include "conn.php";
 
     $name = mysqli_real_escape_string($conn,$_POST['name']);
     $price = mysqli_real_escape_string($conn,$_POST['price']);
@@ -37,50 +37,51 @@ if(isset($_POST['insert'])) {
             echo "<script>alert('Unable to upload photo.Thus, data will not be
             inserted to database. Please try again!');</script>";
             die("<script>window.history.go(-1);</script>");
-        }   else{
-               
-                $selected_cui = $_POST['cuisines'];
-                //step 3: create the SQL statement (since this is insert)
-                if($selected_cui === "1"){
-                    $sql = "INSERT INTO food (food_name, food_price, food_description, food_img, food_type) VALUES ('$name','$price','$description','$target_file','local')";
-                    if(mysqli_query($conn, $sql)) {
-                        echo "<script>alert('Insert successful'); window.location='addEditFood.php'</script>";
-                    }else{
-                        die('Error :' . mysqli_error($conn));
-                    }
-                    mysqli_close($conn);
-                    
-                } else if($selected_cui === "2"){
-                    $sql = "INSERT INTO food (food_name, food_price, food_description, food_img, food_type) VALUES ('$name','$price','$description','$target_file','thai')";
-                    if(mysqli_query($conn, $sql)) {
-                        echo "<script>alert('Insert successful'); window.location='addEditFood.php'</script>";
-                    }else{
-                        die('Error :' . mysqli_error($conn));
-                    }
-                    mysqli_close($conn);
-                    
-                } else if($selected_cui === "3"){
-                    $sql = "INSERT INTO food (food_name, food_price, food_description, food_img, food_type) VALUES ('$name','$price','$description','$target_file','japanese')";
-                    if(mysqli_query($conn, $sql)) {
-                        echo "<script>alert('Insert successful'); window.location='addEditFood.php'</script>";
-                    }else{
-                        die('Error :' . mysqli_error($conn));
-                    }
-                    mysqli_close($conn);
-                } 
-            
+    }   
+else{
+    
+    $selected_cui = $_POST['cuisines'];
+    //step 3: create the SQL statement (since this is insert)
+    if($selected_cui === "1"){
+        $sql = "INSERT INTO food (food_name, food_price, food_description, food_img, food_type) VALUES ('$name','$price','$description','$target_file','local')";
+        if(mysqli_query($conn, $sql)) {
+            echo "<script>alert('Insert successful'); window.location='addEditFood.php'</script>";
+        }else{
+            die('Error :' . mysqli_error($conn));
         }
+        mysqli_close($conn);
+        
+    } else if($selected_cui === "2"){
+        $sql = "INSERT INTO food (food_name, food_price, food_description, food_img, food_type) VALUES ('$name','$price','$description','$target_file','thai')";
+        if(mysqli_query($conn, $sql)) {
+            echo "<script>alert('Insert successful'); window.location='addEditFood.php'</script>";
+        }else{
+            die('Error :' . mysqli_error($conn));
         }
+        mysqli_close($conn);
+        
+    } else if($selected_cui === "3"){
+        $sql = "INSERT INTO food (food_name, food_price, food_description, food_img, food_type) VALUES ('$name','$price','$description','$target_file','japanese')";
+        if(mysqli_query($conn, $sql)) {
+            echo "<script>alert('Insert successful'); window.location='addEditFood.php'</script>";
+        }else{
+            die('Error :' . mysqli_error($conn));
         }
-     //move the file using move_uploaded_file function.
-     //If not success transfer, give alert message!
-     
-    else
-    {
-    echo "<script>alert('File is not an image.Please try again!');</script>";
-    die("<script>window.history.go(-1);</script>");
-    }
+        mysqli_close($conn);
+    } 
 
-   
 }
-    ?>
+}
+}
+//move the file using move_uploaded_file function.
+//If not success transfer, give alert message!
+
+else
+{
+echo "<script>alert('File is not an image.Please try again!');</script>";
+die("<script>window.history.go(-1);</script>");
+}
+
+
+}
+?>
