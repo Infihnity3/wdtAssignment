@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 04, 2019 at 07:28 AM
+-- Generation Time: Nov 07, 2019 at 07:30 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -34,14 +34,15 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `contact_email` varchar(255) NOT NULL,
   `contact_message` text NOT NULL,
   PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `contact`
 --
 
 INSERT INTO `contact` (`contact_id`, `contact_email`, `contact_message`) VALUES
-(1, 'zack@gmail.com', 'yoyoyo\r\n');
+(1, 'zack@gmail.com', 'yoyoyo\r\n'),
+(2, '1@gmail.com', '12');
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `food` (
   `food_img` text NOT NULL,
   `food_type` varchar(50) NOT NULL,
   PRIMARY KEY (`food_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `food`
@@ -89,14 +90,24 @@ CREATE TABLE IF NOT EXISTS `orderfood` (
   PRIMARY KEY (`order_ID`),
   KEY `food_ID` (`food_ID`),
   KEY `orderfood_ibfk_2` (`user_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orderfood`
 --
 
 INSERT INTO `orderfood` (`order_ID`, `food_ID`, `user_name`) VALUES
-(57, 9, 'zack');
+(57, 9, 'zack'),
+(58, 14, 'zack'),
+(59, 9, 'zack'),
+(60, 9, 'zack'),
+(61, 10, 'zack'),
+(62, 10, 'zack'),
+(63, 9, 'zack'),
+(64, 19, 'zack'),
+(65, 9, 'zack'),
+(66, 10, 'zack'),
+(67, 14, 'zack');
 
 -- --------------------------------------------------------
 
@@ -114,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_last_login` datetime NOT NULL,
   PRIMARY KEY (`user_ID`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -122,7 +133,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`user_ID`, `user_name`, `user_password`, `user_email`, `user_role`, `user_last_login`) VALUES
 (54, 'admin_01', 'b2cdd380947330cab613d974492b8e26', 'admin_01@gmail.com', 0, '2019-10-10 13:00:00'),
-(63, 'zack', 'c400e38a930ea4922dee15e7c7c51a7f', 'zack@gmail.com', 1, '2019-11-04 07:04:25');
+(63, 'zack', 'd41d8cd98f00b204e9800998ecf8427e', 'zack@gmail.com', 1, '2019-11-04 07:04:25'),
+(64, '1', 'c4ca4238a0b923820dcc509a6f75849b', '1@gmail.com', 1, '2019-11-05 02:40:49');
 
 --
 -- Constraints for dumped tables
