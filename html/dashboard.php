@@ -94,8 +94,9 @@
                     </tr>
 
                         <?php
-                            include "conn.php";//add connection to the php page
-                            $sql = "select orderfood.order_ID, food.food_name, food.food_price from food Join orderfood on orderfood.food_ID = food.food_ID WHERE orderfood.food_ID = food.food_ID group by orderfood.order_ID, food.food_name, food.food_price";//add a new sql query
+                            include "conn.php";//add connection to the php pag;e
+                            $user = $_SESSION['user'];
+                            $sql = "select orderfood.order_ID, food.food_name, food.food_price,orderfood.user_name from food Join orderfood on orderfood.food_ID = food.food_ID Join users on users.user_name = orderfood.user_name WHERE orderfood.user_name = '$user' group by orderfood.order_ID, food.food_name, food.food_price";//add a new sql query
                             $result = mysqli_query($conn, $sql);//run the sql query and all the data store in variable result
                             
 

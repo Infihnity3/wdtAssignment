@@ -49,10 +49,10 @@
     ?>
         <h1 class="labelPos">Please choose the food that you would like to order:</h1>
         <div class="select">
-            <p> *You can select up to 3 choices of different cuisines</p>
+            <p> *You must select 3 choices of different cuisines</p>
         <form action="orderFood.php" method="POST">
             <select class='custom-select custom-select-sm selectPos' name='food_name' required>
-            <option selected>Open this select menu to order</option>
+            <option selected></option>
     <?php
         include "conn.php";
         $sql = "select * from food";
@@ -66,7 +66,7 @@
     ?>
                 </select>
                 <select class='custom-select custom-select-sm selectPos' name='food_name2'>
-                <option  selected>Open this select menu to order</option>
+                <option  selected></option>
     <?php
         include "conn.php";
         $sql = "select * from food";
@@ -79,7 +79,7 @@
     ?>
                 </select>
                 <select class='custom-select custom-select-sm selectPos' name='food_name3'>
-                <option selected>Open this select menu to order</option>
+                <option selected></option>
     <?php
         include "conn.php";
         $sql = "select * from food";
